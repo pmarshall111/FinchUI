@@ -1,0 +1,12 @@
+First we create the main page view.
+
+Add in logos to buttons
+Make buttons all be the same size
+Centralise Title and subtitle
+
+Move onto Search for Light page and finalise what sort of navigation we want.
+Connect buttons with controllers
+
+
+Thought: We will need a bridge between the 2 projects so the model of this UI can communicate with the Finch search for light program and also other programs.
+If we keep all program data separate from the UI code, then we can just create an interface class within each project and access the data that way.

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane prefHeight="700.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.petermarshall.controller.SearchForLight">
+    <children>
+        <VBox>
+            <HBox alignment="CENTER">
+                <Label styleClass="bigTitle" text="Search for Light" />
+                <ImageView fitHeight="60.0" preserveRatio="true" styleClass="logo" />
+            </HBox>
+            <StackPane styleClass="btnContainer">
+                <Button fx:id="stopBtn" styleClass="startStopBtn" text="Stop" />
+                <Button fx:id="startBtn" styleClass="startStopBtn" text="Start" />
+            </StackPane>
+            <Accordion>
+                <panes>
+                    <TitledPane styleClass="tPane" text="Finch State" />
+                    <TitledPane styleClass="tPane" text="Telemetry" />
+                </panes>
+            </Accordion>
+        </VBox>
+        <AnchorPane pickOnBounds="false">
+            <Button fx:id="backBtn" onMouseClicked="#goToMainMenu" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="25.0" />
+        </AnchorPane>
+    </children>
+
+    <stylesheets>
+        <URL value="@css/backBtn.css" />
+        <URL value="@css/startStopBtn.css" />
+        <URL value="@css/fontSizes.css" />
+        <URL value="@css/searchForLight.css" />
+    </stylesheets>
+</StackPane>

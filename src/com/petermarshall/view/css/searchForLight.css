@@ -1,0 +1,11 @@
+.bigTitle {
+    -fx-padding: 0px 20px;
+}
+
+.logo {
+    -fx-image: url("../icons/light128px.png");
+}
+
+.tPane {
+    -fx-font-size: 20px;
+}
