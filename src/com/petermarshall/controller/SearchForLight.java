@@ -1,10 +1,12 @@
 package com.petermarshall.controller;
 
+import com.petermarshall.LightInterface;
 import com.petermarshall.view.ViewManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-
-import javax.swing.text.ViewFactory;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 
 public class SearchForLight {
 
@@ -12,10 +14,64 @@ public class SearchForLight {
     private Button backBtn;
 
     @FXML
+    private Button stopBtn;
+
+    @FXML
+    private Button startBtn;
+
+    @FXML
+    private CheckBox showTelemetry;
+
+    @FXML
+    private Label timeElapsed;
+
+    @FXML
+    private Label leftLight;
+
+    @FXML
+    private ProgressBar leftLightBar;
+
+    @FXML
+    private Label rightLight;
+
+    @FXML
+    private ProgressBar rightLightBar;
+
+    @FXML
+    private Label leftWheel;
+
+    @FXML
+    private ProgressBar leftWheelBar;
+
+    @FXML
+    private Label rightWheel;
+
+    @FXML
+    private ProgressBar rightWheelBar;
+
+    @FXML
     void goToMainMenu() {
         ViewManager.showMainMenu();
     }
 
+    @FXML
+    void startSearching() {
+        stopBtn.setVisible(true);
+        startBtn.setVisible(false);
+        LightInterface.startSearch();
+    }
+
+    @FXML
+    void endSearch() {
+        startBtn.setVisible(true);
+        stopBtn.setVisible(false);
+        LightInterface.startSearch();
+    }
+
+
+
+
+    //need to implement finch state & telemetry.
 
 
 }
