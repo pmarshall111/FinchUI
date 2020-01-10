@@ -18,7 +18,7 @@ public class Launcher extends Application {
     private void passFinchToSubroutines() {
         Finch sharedFinch = new Finch();
 
-        LightInterface.init(sharedFinch);
+        LightInterfaceThread.init(sharedFinch);
     }
 
 

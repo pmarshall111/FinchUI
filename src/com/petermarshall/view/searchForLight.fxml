@@ -15,10 +15,10 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.control.ProgressBar?>
 
-<StackPane prefHeight="700.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.petermarshall.controller.SearchForLight">
+<?import javafx.scene.control.ToggleGroup?>
+<StackPane prefHeight="700.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml" fx:controller="com.petermarshall.controller.SearchForLight">
     <children>
         <VBox>
             <HBox alignment="CENTER">
@@ -26,8 +26,8 @@
                 <ImageView fitHeight="60.0" preserveRatio="true" styleClass="logo" />
             </HBox>
             <StackPane styleClass="btnContainer">
-                <Button fx:id="stopBtn" styleClass="startStopBtn" text="Stop" />
-                <Button fx:id="startBtn" styleClass="startStopBtn" text="Start" />
+                <Button fx:id="stopBtn" styleClass="startStopBtn" text="Stop" onMouseClicked="#endSearch" visible="false" />
+                <Button fx:id="startBtn" styleClass="startStopBtn" text="Start" onMouseClicked="#startSearching" />
             </StackPane>
             <Accordion>
                 <panes>
@@ -72,7 +72,7 @@
                                             <ToggleGroup fx:id="group" />
                                         </fx:define>
                                         <ToggleButton text="Raw" toggleGroup="$group" selected="true" />
-                                        <ToggleButton text="%" toggleGroup="$group" />
+                                        <ToggleButton text="Perc" toggleGroup="$group" />
                                     </HBox>
                                     <Label text="Light Intensity" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
                                     <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">

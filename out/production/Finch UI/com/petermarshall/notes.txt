@@ -33,3 +33,17 @@ _______
 Plan for controller and changing views
 
 I feel like there should just be 1 class within the view package called ViewManager, where the controllers can call methods to change the views.
+
+______
+
+TODOS:
+
+Connect up start and stop buttons.
+    - Find out how to interact with new thread from different thread.
+
+Nice layout for Final Telemetry page
+Nice layout for things in SearchForLight accordion
+Link up 2 programs. On end start up Final telemetry page
+Add colour.
+
+

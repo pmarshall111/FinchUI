@@ -11,7 +11,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane prefHeight="700.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.petermarshall.controller.SearchForLight">
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ProgressBar?>
+
+<?import javafx.scene.control.ToggleGroup?>
+<StackPane prefHeight="700.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml" fx:controller="com.petermarshall.controller.SearchForLight">
     <children>
         <VBox>
             <HBox alignment="CENTER">
@@ -19,13 +26,87 @@
                 <ImageView fitHeight="60.0" preserveRatio="true" styleClass="logo" />
             </HBox>
             <StackPane styleClass="btnContainer">
-                <Button fx:id="stopBtn" styleClass="startStopBtn" text="Stop" />
-                <Button fx:id="startBtn" styleClass="startStopBtn" text="Start" />
+                <Button fx:id="stopBtn" styleClass="startStopBtn" text="Stop" onMouseClicked="#endSearch" visible="false" />
+                <Button fx:id="startBtn" styleClass="startStopBtn" text="Start" onMouseClicked="#startSearching" />
             </StackPane>
             <Accordion>
                 <panes>
-                    <TitledPane styleClass="tPane" text="Finch State" />
-                    <TitledPane styleClass="tPane" text="Telemetry" />
+                    <TitledPane styleClass="tPane" text="Info">
+                            <Label>
+                                The Finch will first wait to be level before beginning to search for light sources near it's vicinity. It's clear when this starts as the
+                                Finch's beak will turn yellow as it begins it's search. Once it encounters a light source, it's beak will turn to red and the Finch will
+                                attempt to follow the light. You can see what the Finch is up to in the Finch State section of this page, as well as the Telemetry tab.
+
+                                Additionally, there is an option to view a final summary of the search once the activity has been stopped. This can be achieved either by
+                                picking the Finch up and placing it facing upwards, or by pressing the stop button above.
+                            </Label>
+                    </TitledPane>
+                    <TitledPane styleClass="tPane" text="Options">
+                            <CheckBox fx:id="showTelemetry" text="Show telemetry after run" selected="true" />
+                    </TitledPane>
+                    <TitledPane styleClass="tPane" text="Finch State">
+                            <VBox>
+                                <Label>
+                                    The Finch can be in 1 of 2 states; Searching for a Light, or Following a Light. It can be seen which state the Finch is in
+                                    via the colour of it's beak, or below in this tab. Both display the same information, so use whichever is most clear to you.
+                                </Label>
+                                <HBox>
+                                    <Circle />
+                                    <Label text="Searching for a Light" />
+                                </HBox>
+                                <HBox>
+                                    <Circle />
+                                    <Label text="Following Light" />
+                                </HBox>
+                            </VBox>
+                    </TitledPane>
+                    <TitledPane styleClass="tPane" text="Live Telemetry">
+                            <VBox>
+                                <HBox>
+                                    <Label text="Current run time:" />
+                                    <Label fx:id="timeElapsed" text="00:00" />
+                                </HBox>
+                                <GridPane alignment="center" hgap="10" vgap="10">
+                                    <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3">
+                                        <fx:define>
+                                            <ToggleGroup fx:id="group" />
+                                        </fx:define>
+                                        <ToggleButton text="Raw" toggleGroup="$group" selected="true" />
+                                        <ToggleButton text="Perc" toggleGroup="$group" />
+                                    </HBox>
+                                    <Label text="Light Intensity" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <HBox>
+                                            <Label text="Left: " />
+                                            <Label text="-1" fx:id="leftLight" />
+                                        </HBox>
+                                        <ProgressBar fx:id="leftLightBar" />
+                                    </VBox>
+                                    <VBox GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                        <HBox>
+                                            <Label text="Right: " />
+                                            <Label text="-1" fx:id="rightLight" />
+                                        </HBox>
+                                        <ProgressBar fx:id="rightLightBar" />
+                                    </VBox>
+                                    <Label text="Wheel Velocity" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                        <HBox>
+                                            <Label text="Left: " />
+                                            <Label text="-1" fx:id="leftWheel" />
+                                        </HBox>
+                                        <ProgressBar fx:id="leftWheelBar" />
+                                    </VBox>
+                                    <VBox GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                        <HBox>
+                                            <Label text="Right: " />
+                                            <Label text="-1" fx:id="rightWheel" />
+                                        </HBox>
+                                        <ProgressBar fx:id="rightWheelBar" />
+                                    </VBox>
+                                </GridPane>
+                            </VBox>
+                    </TitledPane>
                 </panes>
             </Accordion>
         </VBox>

@@ -1,6 +1,6 @@
 package com.petermarshall.controller;
 
-import com.petermarshall.LightInterface;
+import com.petermarshall.LightInterfaceThread;
 import com.petermarshall.view.ViewManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -49,6 +49,8 @@ public class SearchForLight {
     @FXML
     private ProgressBar rightWheelBar;
 
+    private LightInterfaceThread programThread;
+
     @FXML
     void goToMainMenu() {
         ViewManager.showMainMenu();
@@ -58,14 +60,26 @@ public class SearchForLight {
     void startSearching() {
         stopBtn.setVisible(true);
         startBtn.setVisible(false);
-        LightInterface.startSearch();
+
+        programThread = new LightInterfaceThread();
+        programThread.start();
+
+//        LightInterfaceThread.startSearch();
     }
 
     @FXML
     void endSearch() {
         startBtn.setVisible(true);
         stopBtn.setVisible(false);
-        LightInterface.startSearch();
+//        LightInterfaceThread.startSearch();
+
+
+        programThread.stopProgram();
+//        try {
+//            programThread.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
 
