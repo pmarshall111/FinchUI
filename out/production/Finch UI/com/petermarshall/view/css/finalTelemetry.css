@@ -1,0 +1,16 @@
+.mainContent {
+    -fx-padding: 37.5px;
+}
+
+.subContentTime {
+    -fx-padding: 25px 25px 31px 25px;
+}
+
+.subContent {
+    -fx-padding: 25px;
+}
+
+.logo {
+    -fx-image: url("../icons/statistics64px.png");
+    -fx-padding: 30px;
+}

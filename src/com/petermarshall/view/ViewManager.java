@@ -36,12 +36,26 @@ public class ViewManager {
     }
 
     public static void showSearchForLight() {
-        viewManager.showSearchForLightInstace();
+        viewManager.showSearchForLightInstance();
     }
 
-    private void showSearchForLightInstace() {
+    private void showSearchForLightInstance() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("searchForLight.fxml"));
+            mainStage.setScene(new Scene(root, 600, 600));
+            mainStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void showFinalTelemetry() {
+        viewManager.showFinalTelemetryInstance();
+    }
+
+    private void showFinalTelemetryInstance() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("finalTelemetry.fxml"));
             mainStage.setScene(new Scene(root, 600, 600));
             mainStage.show();
         } catch (IOException e) {

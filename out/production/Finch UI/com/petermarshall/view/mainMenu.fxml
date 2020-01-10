@@ -37,6 +37,7 @@
         <URL value="@css/taskButtons.css" />
         <URL value="@css/fontSizes.css" />
         <URL value="@css/homepage.css" />
+        <URL value="@css/separator.css" />
     </stylesheets>
 
 </VBox>

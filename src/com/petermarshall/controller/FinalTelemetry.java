@@ -33,7 +33,7 @@ public class FinalTelemetry {
     @FXML
     private PieChart stateTimePi;
     @FXML
-    private LineChart lightGraph;
+    private LineChart<Double, Double> lightGraph;
     @FXML
     private Button closeBtn;
 

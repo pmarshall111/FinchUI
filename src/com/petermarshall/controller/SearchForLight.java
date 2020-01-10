@@ -71,8 +71,6 @@ public class SearchForLight {
     void endSearch() {
         startBtn.setVisible(true);
         stopBtn.setVisible(false);
-//        LightInterfaceThread.startSearch();
-
 
         programThread.stopProgram();
 //        try {

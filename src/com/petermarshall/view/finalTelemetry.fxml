@@ -8,71 +8,105 @@
 
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.chart.LineChart?>
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.petermarshall.controller.FinalTelemetry"
-      prefHeight="400.0" prefWidth="600.0">
-    <Label text="Final Stats" />
-    <Label text="Time" />
-    <Separator />
-    <GridPane>
-        <Label text="Total Run Time:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-        <Label text="-1m" fx:id="runTime" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+<?import javafx.scene.chart.NumberAxis?>
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.petermarshall.controller.FinalTelemetry"
+            prefHeight="400.0" prefWidth="600.0" vvalue="-Infinity">
+    <content>
+        <VBox>
+            <HBox alignment="CENTER">
+                <Label text="Final Stats" styleClass="bigTitle"/>
+                <ImageView fitHeight="36.0" preserveRatio="true" styleClass="logo"/>
+            </HBox>
+            <VBox styleClass="mainContent">
+                <Label text="About" styleClass="subtitle"/>
+                <Separator/>
+                <VBox styleClass="subContent">
+                    <Label text="Below are the aggregated stats from the most recent run of the Finch searching for a light."/>
+                </VBox>
+                <Label text="Time" styleClass="subtitle"/>
+                <Separator/>
+                <GridPane styleClass="subContent" hgap="10" vgap="10">
+                    <Label text="Total Run Time:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Label text="-1m" fx:id="runTime" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <Label text="Times New Light Detected:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <Label text="-1" fx:id="newLightDetections" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                </GridPane>
+                <PieChart title="Finch State Distribution" fx:id="stateTimePi"/>
+                <Label text="Light Readings" styleClass="subtitle"/>
+                <Separator/>
+                <GridPane styleClass="subContent" hgap="10" vgap="10">
+                    <Label text="Starting Readings:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label text="L:"/>
+                        <Label text="-1" fx:id="leftStarting"/>
+                    </HBox>
+                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="0">
+                        <Label text="R:"/>
+                        <Label text="-1" fx:id="rightStarting"/>
+                    </HBox>
 
-        <Label text="Finch State Distribution:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <PieChart fx:id="stateTimePi" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label text="Highest Sensor Readings:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label text="L:"/>
+                        <Label text="-1" fx:id="leftMaxVal"/>
+                    </HBox>
+                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <Label text="R:"/>
+                        <Label text="-1" fx:id="rightMaxVal"/>
+                    </HBox>
 
-        <Label text="Times New Light Detected:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <Label text="-1" fx:id="newLightDetections" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-    </GridPane>
-    <Label text="Light Readings" />
-    <GridPane>
-        <Label text="Starting Readings:" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4"/>
-        <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <Label text="L:" />
-            <Label text="-1" fx:id="leftStarting" />
-        </HBox>
-        <HBox GridPane.columnIndex="2" GridPane.rowIndex="1">
-            <Label text="R:" />
-            <Label text="-1" fx:id="rightStarting" />
-        </HBox>
+                    <Label text="Lowest Sensor Readings:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label text="L:"/>
+                        <Label text="-1" fx:id="leftMinVal"/>
+                    </HBox>
+                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <Label text="R:"/>
+                        <Label text="-1" fx:id="rightMinVal"/>
+                    </HBox>
 
-        <Label text="Highest Sensor Readings:" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="4"/>
-        <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
-            <Label text="L:" />
-            <Label text="-1" fx:id="leftMaxVal" />
-        </HBox>
-        <HBox GridPane.columnIndex="2" GridPane.rowIndex="3">
-            <Label text="R:" />
-            <Label text="-1" fx:id="rightMaxVal" />
-        </HBox>
+                    <Label text="Average Light Sensor Vals:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label text="L:"/>
+                        <Label text="-1" fx:id="leftAvg"/>
+                    </HBox>
+                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="3">
+                        <Label text="R:"/>
+                        <Label text="-1" fx:id="rightAvg"/>
+                    </HBox>
+                    <HBox GridPane.columnIndex="3" GridPane.rowIndex="3">
+                        <Label text="OVR:"/>
+                        <Label text="-1" fx:id="ovrAvg"/>
+                    </HBox>
+                </GridPane>
+                <HBox alignment="CENTER">
+                    <LineChart fx:id="lightGraph" title="Average Light Readings Over Time">
+                        <xAxis>
+                            <NumberAxis autoRanging="false" lowerBound="-10" side="BOTTOM" tickUnit="1"
+                                        upperBound="10"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis autoRanging="false" lowerBound="-10" side="LEFT" tickUnit="1" upperBound="10"/>
+                        </yAxis>
+                        <cursor>
+                            <Cursor fx:constant="CROSSHAIR"/>
+                        </cursor>
+                    </LineChart>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT">
+                    <Button text="Close" fx:id="closeBtn" onMouseClicked="#closeClicked"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </content>
 
-        <Label text="Lowest Sensor Readings:" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="4"/>
-        <HBox GridPane.columnIndex="1" GridPane.rowIndex="5">
-            <Label text="L:" />
-            <Label text="-1" fx:id="leftMinVal" />
-        </HBox>
-        <HBox GridPane.columnIndex="2" GridPane.rowIndex="5">
-            <Label text="R:" />
-            <Label text="-1" fx:id="rightMinVal" />
-        </HBox>
-
-        <Label text="Average Light Sensor Vals:" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="4"/>
-        <HBox GridPane.columnIndex="1" GridPane.rowIndex="7">
-            <Label text="L:" />
-            <Label text="-1" fx:id="leftAvg" />
-        </HBox>
-        <HBox GridPane.columnIndex="2" GridPane.rowIndex="7">
-            <Label text="R:" />
-            <Label text="-1" fx:id="rightAvg" />
-        </HBox>
-        <HBox GridPane.columnIndex="3" GridPane.rowIndex="7">
-            <Label text="OVR:" />
-            <Label text="-1" fx:id="ovrAvg" />
-        </HBox>
-
-        <Label text="Average Light Readings Over Time" GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.columnSpan="4" />
-        <LineChart fx:id="lightGraph" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
-    </GridPane>
-    <Button text="Close" fx:id="closeBtn" onMouseClicked="#closeClicked"/>
-</VBox>
+    <stylesheets>
+        <URL value="@css/fontSizes.css"/>
+        <URL value="@css/separator.css"/>
+        <URL value="@css/finalTelemetry.css"/>
+    </stylesheets>
+</ScrollPane>
