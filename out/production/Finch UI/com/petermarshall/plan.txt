@@ -10,3 +10,27 @@ Connect buttons with controllers
 
 Thought: We will need a bridge between the 2 projects so the model of this UI can communicate with the Finch search for light program and also other programs.
 If we keep all program data separate from the UI code, then we can just create an interface class within each project and access the data that way.
+
+
+_________
+
+Binding between model and view
+
+Will need to pass values from model to the controller. So each controller should have access to the model data (which in turn gets it's data from the program.). Will need another
+thread to update these values on a timer also.
+
+- Create model files with bindable fields and another thread to update them.
+- Refactor ViewManager to create controllers and assign the model file to it.
+- Within initialise method of controller, we should bind all fields to the thing in the model.
+
+
+check to see if initial binding works.
+(looking for livetelemetry leftLight)
+
+
+
+
+Need to figure out how we can bind the RawAndPerc things. Is it possible to bind based on a parameter? Use a function within the bind??? Else we will have to make new methods and
+change the bindings based on
+Just going to bind these properties, then after we need to make another method to open up the final telemetry once finished.
+Final telemetry controller will then set vals based on data.

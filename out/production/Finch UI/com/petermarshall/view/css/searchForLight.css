@@ -8,4 +8,31 @@
 
 .tPane {
     -fx-font-size: 20px;
+    -fx-padding: 10px;
 }
+
+.paddingBox {
+    -fx-padding: 10px 10px 0px 10px;
+}
+
+.selectedCircle {
+    -fx-stroke: black;
+    -fx-stroke-width: 5px;
+}
+
+.selectedLabel {
+    -fx-font-weight: bold;
+}
+
+#waitingCircle {
+    -fx-fill: #0074D9;
+}
+
+#searchCircle {
+    -fx-fill: #FFDC00;
+}
+
+#followCircle {
+    -fx-fill: #FF4136;
+}
+

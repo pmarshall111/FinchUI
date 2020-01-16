@@ -9,13 +9,13 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-//        passFinchToSubroutines();
+        passFinchToSubroutines();
 //
 //        ViewManager.init(primaryStage);
 //        ViewManager.showMainMenu();
 
         ViewManager.init(primaryStage);
-        ViewManager.showFinalTelemetry();
+        ViewManager.showSearchForLight();
     }
 
     private void passFinchToSubroutines() {

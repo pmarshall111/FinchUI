@@ -9,3 +9,7 @@
 .task {
     -fx-font-size: 20px
 }
+
+.detail {
+    -fx-font-size: 12.5px;
+}

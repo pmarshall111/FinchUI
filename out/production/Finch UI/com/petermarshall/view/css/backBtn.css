@@ -1,11 +1,13 @@
 #backBtn {
     -fx-cursor: hand;
-    -fx-background-image: url("../icons/backBtn32px.png");
+    -fx-background-image: url("../icons/back24px.png");
     -fx-background-size: 24 24;
     -fx-background-repeat: no-repeat;
-    -fx-background-position: center;
+    -fx-background-position: 10px center;
     -fx-background-radius: 25px;
 
     -fx-min-width: 25px;
     -fx-min-height: 25px;
+
+    -fx-padding: 5px 22px 5px 44px;
 }

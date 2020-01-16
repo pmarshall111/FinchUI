@@ -1,16 +1,22 @@
-.mainContent {
-    -fx-padding: 37.5px;
-}
-
 .subContentTime {
     -fx-padding: 25px 25px 31px 25px;
-}
-
-.subContent {
-    -fx-padding: 25px;
 }
 
 .logo {
     -fx-image: url("../icons/statistics64px.png");
     -fx-padding: 30px;
+}
+
+.highlightedVal {
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+    -fx-padding: 0px 5px;
+}
+
+.highlightedVal.detail {
+}
+
+#lightGraph {
+    -fx-create-symbols: false;
+    -fx-legend-visible: false;
 }

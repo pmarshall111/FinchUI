@@ -1,0 +1,9 @@
+Want to make sure the only class from our other project we can access is the interface. Don't want to be able to mess with the program from outside source.
+
+Need to add testing to both files.
+
+Add option to change update frequency
+
+Add centered panes so when we resize window the content always stays in the center
+
+Stop SearchForLight from jumping to the top when we click stop.

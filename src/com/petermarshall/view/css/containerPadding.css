@@ -1,0 +1,11 @@
+.subContent {
+    -fx-padding: 25px;
+}
+
+.mainContent {
+    -fx-padding: 37.5px;
+}
+
+.titleContent {
+    -fx-padding: 50px;
+}
