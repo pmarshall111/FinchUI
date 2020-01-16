@@ -4,6 +4,8 @@ import com.petermarshall.SpeedLightStats;
 import com.petermarshall.TimeInStates;
 import com.petermarshall.model.FinchLiveData;
 import com.petermarshall.model.SummaryData;
+import com.petermarshall.model.helpers.DoubleFormat;
+import com.petermarshall.model.helpers.TimeFormat;
 import com.petermarshall.view.ViewManager;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
@@ -11,6 +13,7 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
 
 import java.util.ArrayList;
@@ -120,10 +123,28 @@ public class FinalTelemetry {
 
     private void setPieChart() {
         TimeInStates time = endData.getTimeInStates();
+
+        long totalTime = time.getTotalRecordedTime();
+
         //order of these statements is important for matching css colours to Finch beak colours.
         stateTimePie.getData().add(new PieChart.Data("Waiting to be level", time.getWaitingTime()));
         stateTimePie.getData().add(new PieChart.Data("Searching", time.getSearchingTime()));
         stateTimePie.getData().add(new PieChart.Data("Following", time.getFollowingTime()));
+        addTooltips(totalTime);
+    }
+
+    private void addTooltips(long totalTime) {
+        stateTimePie.getData().forEach(pieSection -> {
+            long timeNs = (long) pieSection.getPieValue();
+            double percentage = 100 * pieSection.getPieValue() / totalTime;
+
+            Tooltip tooltip = new Tooltip();
+            String textToDisplay = pieSection.getName() + "\n" +
+                                    "Time:       " + TimeFormat.getMinsSecsFromNanoSecs(timeNs) + "\n" +
+                                    "Percentage: " + DoubleFormat.getToXDecimalPlaces(percentage, 1) + "%";
+            tooltip.setText(textToDisplay);
+            Tooltip.install(pieSection.getNode(), tooltip);
+        });
     }
 
     private void setLineChart() {

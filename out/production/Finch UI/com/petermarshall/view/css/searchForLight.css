@@ -44,3 +44,8 @@
     -fx-border-width: 2px 0px 2px 2px;
     -fx-padding: 5px 10px;
 }
+
+.miniTitle {
+    -fx-underline: true;
+    -fx-padding: 5px 0px;
+}

@@ -44,7 +44,7 @@
                     <Label text="Total Run Time:" styleClass="detail" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                     <Label text="-1m" fx:id="runTime" styleClass="highlightedVal, detail" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
                 </GridPane>
-                <PieChart title="Finch State Distribution" fx:id="stateTimePie"/>
+                <PieChart title="Time the Finch spent in each state" fx:id="stateTimePie"/>
                 <Label text="Light Readings" styleClass="subtitle"/>
                 <Separator/>
                 <GridPane styleClass="subContent" hgap="10" vgap="10">

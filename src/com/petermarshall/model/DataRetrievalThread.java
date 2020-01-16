@@ -1,6 +1,7 @@
 package com.petermarshall.model;
 
 import com.petermarshall.LightInterfaceThread;
+import com.petermarshall.model.helpers.TimeFormat;
 import javafx.application.Platform;
 
 //Class relies heavily on variables in FinchLiveData. Variables changed there affect this class.
@@ -98,18 +99,12 @@ public class DataRetrievalThread extends Thread {
     private void setTime() {
         Platform.runLater(() -> {
             try {
-                timeElapsed.set(formatTime(LightInterfaceThread.getTimeElapsedInNS()));
+                timeElapsed.set(
+                        TimeFormat.getMinsSecsFromNanoSecs(LightInterfaceThread.getTimeElapsedInNS())
+                );
             } catch (NullPointerException e) {
                 e.printStackTrace();
             }
         });
-    }
-
-    //MM:SS
-    private String formatTime(long timeNs) {
-        int seconds = (int) (timeNs / Math.pow(10, 9));
-        int mins = seconds / 60;
-        seconds = seconds % 60;
-        return mins + "m " + seconds + "s";
     }
 }

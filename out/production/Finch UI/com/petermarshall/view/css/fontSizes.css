@@ -6,6 +6,10 @@
     -fx-font-size: 30px;
 }
 
+.miniTitle {
+    -fx-font-size: 20px;
+}
+
 .task {
     -fx-font-size: 20px
 }

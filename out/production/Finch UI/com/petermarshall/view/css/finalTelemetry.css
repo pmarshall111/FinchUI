@@ -32,7 +32,7 @@
 
 .chart-pie {
     -fx-border-color: derive(-fx-pie-color, -40%);
-    -fx-border-width: 3px;
+    -fx-border-width: 1px;
 }
 
 .default-color0.chart-pie { -fx-pie-color: #0074D9; }

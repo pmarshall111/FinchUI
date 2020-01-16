@@ -208,7 +208,6 @@ public class SearchForLight {
     @FXML
     void endSearch() {
         FinchLiveData.stopProgram();
-        showProgramEnded();
     }
 
     private void showProgramEnded() {

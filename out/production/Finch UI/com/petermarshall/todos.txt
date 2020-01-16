@@ -14,14 +14,15 @@ Try out fast update frequency to see how that makes the program.
 
 BUGS
 - When state is searching for light, wheel velocity is always 100
-- Also want to set Pie Chart colours to make those earlier in the application
-- Lowest sensor readings in final output highlighting wrong one
+-Possibly add in record readings for the first few seconds of waiting to be level.
+
+
 - Also would like to line up text even if it has a border round it.
-- Maybe put the back button in a solid bar across the top, above the title. The same length as the separator.
 - Add in tooltip for the pie chart so we can see the time in each section. Same for light readings. Add tooltip to tell user
 what minimum detected light val is.
--Possibly add in record readings for the first few seconds of waiting to be level.
-- Need a check on all the variables for when we put the finch beak up
-
 - On Search for light, would prefer to have 1 big title for telemetry, then a subtitle for state and a subtitle for live stats.
 Is really stupid to have these titles the same height as the main subtitles.
+
+- Maybe put the back button in a solid bar across the top, above the title. The same length as the separator.
+- Need colour structure over the page to add interest. Not too headliny though as that's what the buttons etc are for.
+- Would be cool to colour the line on line chart based on what state the finch is in at that time.
