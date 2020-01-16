@@ -44,48 +44,48 @@
                     <Label text="Total Run Time:" styleClass="detail" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                     <Label text="-1m" fx:id="runTime" styleClass="highlightedVal, detail" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
                 </GridPane>
-                <PieChart title="Finch State Distribution" fx:id="stateTimePi"/>
+                <PieChart title="Finch State Distribution" fx:id="stateTimePie"/>
                 <Label text="Light Readings" styleClass="subtitle"/>
                 <Separator/>
                 <GridPane styleClass="subContent" hgap="10" vgap="10">
                     <Label text="Starting Readings:" styleClass="detail" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" >
-                        <Label text="L:" styleClass="detail" />
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="highlightedVal">
+                        <Label text="L: " styleClass="detail" />
                         <Label text="-1" fx:id="leftStarting" styleClass="detail"/>
                     </HBox>
                     <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="highlightedVal">
-                        <Label text="R:" styleClass="detail"/>
+                        <Label text="R: " styleClass="detail"/>
                         <Label text="-1" fx:id="rightStarting" styleClass="detail"/>
                     </HBox>
-                    <Label text="Highest Sensor Readings:" styleClass="detail" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="leftMaxBox">
-                        <Label text="L:" styleClass="detail"/>
+                    <Label text="Highest Sensor Readings:" styleClass="statLabel, detail" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="leftMaxBox" styleClass="regularVal">
+                        <Label text="L: " styleClass="detail"/>
                         <Label text="-1" fx:id="leftMaxVal" styleClass="detail"/>
                     </HBox>
-                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="1" fx:id="rightMaxBox">
-                        <Label text="R:" styleClass="detail"/>
+                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="1" fx:id="rightMaxBox" styleClass="regularVal">
+                        <Label text="R: " styleClass="detail"/>
                         <Label text="-1" fx:id="rightMaxVal" styleClass="detail"/>
                     </HBox>
-                    <Label text="Lowest Sensor Readings:" styleClass="detail" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="leftMinBox">
-                        <Label text="L:" styleClass="detail"/>
+                    <Label text="Lowest Sensor Readings:" styleClass="statLabel, detail" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="leftMinBox" styleClass="regularVal">
+                        <Label text="L: " styleClass="detail"/>
                         <Label text="-1" fx:id="leftMinVal" styleClass="detail"/>
                     </HBox>
-                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="rightMinBox">
-                        <Label text="R:" styleClass="detail"/>
+                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="2" fx:id="rightMinBox" styleClass="regularVal">
+                        <Label text="R: " styleClass="detail"/>
                         <Label text="-1" fx:id="rightMinVal" styleClass="detail"/>
                     </HBox>
-                    <Label text="Average Light Sensor Vals:" styleClass="detail" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
-                        <Label text="L:" styleClass="detail"/>
+                    <Label text="Average Light Sensor Vals:" styleClass="statLabel, detail" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="regularVal">
+                        <Label text="L: " styleClass="detail"/>
                         <Label text="-1" fx:id="leftAvg" styleClass="detail"/>
                     </HBox>
-                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="3">
-                        <Label text="R:" styleClass="detail"/>
+                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="3" styleClass="regularVal">
+                        <Label text="R: " styleClass="detail"/>
                         <Label text="-1" fx:id="rightAvg" styleClass="detail"/>
                     </HBox>
                     <HBox GridPane.columnIndex="3" GridPane.rowIndex="3" styleClass="highlightedVal">
-                        <Label text="OVR:" styleClass="detail"/>
+                        <Label text="OVR: " styleClass="detail"/>
                         <Label text="-1" fx:id="ovrAvg" styleClass="detail"/>
                     </HBox>
                 </GridPane>

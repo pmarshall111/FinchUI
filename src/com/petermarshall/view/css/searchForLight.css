@@ -15,13 +15,12 @@
     -fx-padding: 10px 10px 0px 10px;
 }
 
-.selectedCircle {
-    -fx-stroke: black;
-    -fx-stroke-width: 5px;
+.selectedCircleBox {
+    -fx-border-color: black;
 }
 
 .selectedLabel {
-    -fx-font-weight: bold;
+    -fx-border-color: black;
 }
 
 #waitingCircle {
@@ -36,3 +35,12 @@
     -fx-fill: #FF4136;
 }
 
+.finchStateLabel {
+    -fx-border-width: 2px 2px 2px 0px;
+    -fx-padding: 5px 10px 5px 0px; /*Is placed to the right of circle so we only want a small gap there*/
+}
+
+.stateCircleContainer {
+    -fx-border-width: 2px 0px 2px 2px;
+    -fx-padding: 5px 10px;
+}

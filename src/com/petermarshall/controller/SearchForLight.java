@@ -4,6 +4,8 @@ import com.petermarshall.LightInterfaceThread;
 import com.petermarshall.RawAndPecentage;
 import com.petermarshall.model.FinchLiveData;
 import com.petermarshall.view.ViewManager;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -54,18 +56,18 @@ public class SearchForLight {
     private ToggleButton rawSelected;
 
     @FXML
-    private HBox waitingBox;
+    private HBox waitingCircleBox;
 
     @FXML
-    private HBox searchBox;
+    private HBox searchCircleBox;
 
     @FXML
-    private HBox followBox;
+    private HBox followCircleBox;
 
 
 
 
-    private final String CIRCLE_STYLE = "selectedCircle";
+    private final String CIRCLE_STYLE = "selectedCircleBox";
     private final String LABEL_STYLE = "selectedLabel";
     @FXML
     private Circle waitingCircle;
@@ -97,7 +99,7 @@ public class SearchForLight {
         stopBtn.setVisible(true);
         startBtn.setVisible(false);
 
-        FinchLiveData.startProgram(1000); //default val of 1s update time.
+        FinchLiveData.startProgram(100); //default val of 1s update time.
         bindData();
         setInitialVals();
 
@@ -106,7 +108,7 @@ public class SearchForLight {
     }
 
     private void setInitialVals() {
-        waitingCircle.getStyleClass().add(CIRCLE_STYLE);
+        waitingCircleBox.getStyleClass().add(CIRCLE_STYLE);
         waitingLabel.getStyleClass().add(LABEL_STYLE);
     }
 
@@ -133,24 +135,24 @@ public class SearchForLight {
 //                    searchBox.getStyleClass().add(style);
 //            }
 
-            waitingCircle.getStyleClass().remove(CIRCLE_STYLE);
-            followCircle.getStyleClass().remove(CIRCLE_STYLE);
-            searchCircle.getStyleClass().remove(CIRCLE_STYLE);
+            waitingCircleBox.getStyleClass().remove(CIRCLE_STYLE);
+            followCircleBox.getStyleClass().remove(CIRCLE_STYLE);
+            searchCircleBox.getStyleClass().remove(CIRCLE_STYLE);
             waitingLabel.getStyleClass().remove(LABEL_STYLE);
             followLabel.getStyleClass().remove(LABEL_STYLE);
             searchLabel.getStyleClass().remove(LABEL_STYLE);
 
             switch (newValue){
                 case WAITING_TO_BE_LEVEL:
-                    waitingCircle.getStyleClass().add(CIRCLE_STYLE);
+                    waitingCircleBox.getStyleClass().add(CIRCLE_STYLE);
                     waitingLabel.getStyleClass().add(LABEL_STYLE);
                     break;
                 case FOLLOWING:
-                    followCircle.getStyleClass().add(CIRCLE_STYLE);
+                    followCircleBox.getStyleClass().add(CIRCLE_STYLE);
                     followLabel.getStyleClass().add(LABEL_STYLE);
                     break;
                 case SEARCH:
-                    searchCircle.getStyleClass().add(CIRCLE_STYLE);
+                    searchCircleBox.getStyleClass().add(CIRCLE_STYLE);
                     searchLabel.getStyleClass().add(LABEL_STYLE);
                     break;
             }
@@ -170,6 +172,13 @@ public class SearchForLight {
 
         FinchLiveData.currRightLightStatsProperty().addListener((observable, oldValue, newValue) -> {
             updateVals(rightLight, rightLightBar, newValue);
+        });
+
+        FinchLiveData.collectLiveDataProperty().addListener((observable, oldValue, programRunning) -> {
+            System.out.println("Program running: " + programRunning);
+            if (!programRunning) {
+                showProgramEnded();
+            }
         });
 
         rawSelected.selectedProperty().addListener((observable, oldValue, newValue) -> {
@@ -198,10 +207,14 @@ public class SearchForLight {
 
     @FXML
     void endSearch() {
+        FinchLiveData.stopProgram();
+        showProgramEnded();
+    }
+
+    private void showProgramEnded() {
         startBtn.setVisible(true);
         stopBtn.setVisible(false);
 
-        FinchLiveData.stopProgram();
         if (showTelemetry.isSelected()) {
             ViewManager.showFinalTelemetry();
         }

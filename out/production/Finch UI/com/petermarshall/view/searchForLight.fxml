@@ -1,38 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
-<?import javafx.scene.control.Accordion?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-
-<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Circle?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.control.ProgressBar?>
-
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.text.TextFlow?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.control.Separator?>
+<?import java.net.*?>
 <ScrollPane xmlns="http://javafx.com/javafx/8.0.172-ea"
             xmlns:fx="http://javafx.com/fxml" fx:controller="com.petermarshall.controller.SearchForLight">
     <content>
         <StackPane prefHeight="700.0" prefWidth="600.0">
             <VBox>
                 <HBox alignment="CENTER" styleClass="titleContent">
-                    <Label styleClass="bigTitle" text="Search for Light"/>
+                    <Label styleClass="bigTitle" text="Task: Search for Light"/>
                 </HBox>
                 <VBox styleClass="mainContent">
-                    <Label text="Get Started" styleClass="subtitle" />
+                    <Label text="Get Started" styleClass="subtitle"/>
                     <Separator/>
                     <VBox styleClass="subContent">
                         <Text wrappingWidth="550" styleClass="detail">
@@ -55,14 +37,15 @@
                         <StackPane styleClass="btnContainer">
                             <Button fx:id="stopBtn" styleClass="startStopBtn" text="Stop" onMouseClicked="#endSearch"
                                     visible="false"/>
-                            <Button fx:id="startBtn" styleClass="startStopBtn" text="Start Searching!" onMouseClicked="#startSearching"/>
+                            <Button fx:id="startBtn" styleClass="startStopBtn" text="Start Searching!"
+                                    onMouseClicked="#startSearching"/>
                         </StackPane>
                         <HBox alignment="CENTER">
                             <CheckBox fx:id="showTelemetry" text="Show telemetry after run" selected="true"/>
                         </HBox>
                     </VBox>
 
-                    <Label text="Finch State" styleClass="subtitle" />
+                    <Label text="Finch State" styleClass="subtitle"/>
                     <Separator/>
                     <VBox styleClass="subContent">
                         <Text wrappingWidth="550" styleClass="detail">
@@ -71,32 +54,54 @@
                             via the colour of it's beak, or below in this tab. Both display the same
                             information, so use whichever is most clear to you.
                         </Text>
-                        <GridPane styleClass="paddingBox" alignment="CENTER" vgap="10" hgap="10">
-                            <Circle fx:id="waitingCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                            <Label text="Waiting to be level" styleClass="stateLabel" fx:id="waitingLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                            <Circle fx:id="searchCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                            <Label text="Searching for a Light" styleClass="stateLabel" fx:id="searchLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                            <Circle fx:id="followCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                            <Label text="Following Light" styleClass="stateLabel" fx:id="followLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <!--<GridPane styleClass="paddingBox" alignment="CENTER" vgap="10" hgap="10">-->
+                            <!--<Circle fx:id="waitingCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="0"/>-->
+                            <!--<Label text="Waiting to be level" styleClass="stateLabel" fx:id="waitingLabel"-->
+                                   <!--GridPane.columnIndex="1" GridPane.rowIndex="0"/>-->
+                            <!--<Circle fx:id="searchCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="1"/>-->
+                            <!--<Label text="Searching for a Light" styleClass="stateLabel" fx:id="searchLabel"-->
+                                   <!--GridPane.columnIndex="1" GridPane.rowIndex="1"/>-->
+                            <!--<Circle fx:id="followCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="2"/>-->
+                            <!--<Label text="Following Light" styleClass="stateLabel" fx:id="followLabel"-->
+                                   <!--GridPane.columnIndex="1" GridPane.rowIndex="2"/>-->
+                        <!--</GridPane>-->
+
+                        <GridPane styleClass="paddingBox" alignment="CENTER" vgap="10">
+                            <HBox fx:id="waitingCircleBox" styleClass="stateCircleContainer" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <Circle fx:id="waitingCircle" radius="10"/>
+                            </HBox>
+                            <Label text="Waiting to be level" maxHeight="Infinity" styleClass="finchStateLabel" fx:id="waitingLabel"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            <HBox fx:id="searchCircleBox" styleClass="stateCircleContainer" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <Circle fx:id="searchCircle" radius="10"/>
+                            </HBox>
+                            <Label text="Searching for a Light" maxHeight="Infinity" styleClass="finchStateLabel" fx:id="searchLabel"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            <HBox fx:id="followCircleBox" styleClass="stateCircleContainer" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                            <Circle fx:id="followCircle" radius="10"/>
+                            </HBox>
+                            <Label text="Following Light" maxHeight="Infinity" styleClass="finchStateLabel" fx:id="followLabel"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                         </GridPane>
                     </VBox>
-
-                    <!--<Label text="Live Telemetry" styleClass="subtitle" />-->
-                    <!--<Separator/>-->
+                    <Label text="Live Telemetry" styleClass="subtitle"/>
+                    <Separator/>
                     <VBox styleClass="subContent">
                         <HBox alignment="CENTER">
                             <Label text="Current run time: " styleClass="detail"/>
                             <Label fx:id="timeElapsed" text="00:00" styleClass="detail"/>
                         </HBox>
                         <GridPane styleClass="paddingBox" alignment="CENTER" hgap="10" vgap="10">
-                            <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3" alignment="CENTER">
+                            <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3"
+                                  alignment="CENTER">
                                 <fx:define>
                                     <ToggleGroup fx:id="group"/>
                                 </fx:define>
                                 <ToggleButton text="Raw" toggleGroup="$group" selected="true" fx:id="rawSelected"/>
                                 <ToggleButton text="Perc" toggleGroup="$group"/>
                             </HBox>
-                            <Label text="Light Intensity:" styleClass="detail" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <Label text="Light Intensity:" styleClass="detail" GridPane.columnIndex="0"
+                                   GridPane.rowIndex="1"/>
                             <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
                                 <HBox alignment="CENTER">
                                     <Label text="Left: " styleClass="detail"/>

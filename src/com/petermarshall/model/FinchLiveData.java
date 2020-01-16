@@ -2,11 +2,12 @@ package com.petermarshall.model;
 
 import com.petermarshall.*;
 import javafx.application.Platform;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public abstract class FinchLiveData { //TODO decide if we can simplify this file by extending from LightInterfaceThread. Can do this and not worry about extending thread because we've made the class abstract so it can't be instantiated and thus run
-    static boolean collectLiveData;
+    static SimpleBooleanProperty collectLiveData;
     static int updateSpeed;
 
     static SimpleStringProperty timeElapsed;
@@ -18,7 +19,6 @@ public abstract class FinchLiveData { //TODO decide if we can simplify this file
     private static LightInterfaceThread searchForLightThread;
 
     public static void startProgram(int speed) {
-        collectLiveData = true;
         updateSpeed = speed;
         initVariables();
         startProgramInNewThread();
@@ -50,6 +50,7 @@ public abstract class FinchLiveData { //TODO decide if we can simplify this file
     }
     
     private static void initVariables() {
+        collectLiveData = new SimpleBooleanProperty(true);
         timeElapsed = new SimpleStringProperty();
         currentState = new SimpleObjectProperty<>();
         currLeftVelStats = new SimpleObjectProperty<>();
@@ -59,11 +60,15 @@ public abstract class FinchLiveData { //TODO decide if we can simplify this file
     }
     
     public static void stopProgram() {
-        collectLiveData = false;
+        collectLiveData.set(false);
         searchForLightThread.stopProgram();
     }
 
     public static boolean isProgramRunning() {
+        return collectLiveData.get();
+    }
+
+    public static SimpleBooleanProperty collectLiveDataProperty() {
         return collectLiveData;
     }
 

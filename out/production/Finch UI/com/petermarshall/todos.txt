@@ -2,8 +2,26 @@ Want to make sure the only class from our other project we can access is the int
 
 Need to add testing to both files.
 
-Add option to change update frequency
-
 Add centered panes so when we resize window the content always stays in the center
 
 Stop SearchForLight from jumping to the top when we click stop.
+
+Try out fast update frequency to see how that makes the program.
+
+- Need to include a credits section for the icons usage.
+- Possibly about page as well basically just listing what technology was used to create the project.
+
+
+BUGS
+- When state is searching for light, wheel velocity is always 100
+- Also want to set Pie Chart colours to make those earlier in the application
+- Lowest sensor readings in final output highlighting wrong one
+- Also would like to line up text even if it has a border round it.
+- Maybe put the back button in a solid bar across the top, above the title. The same length as the separator.
+- Add in tooltip for the pie chart so we can see the time in each section. Same for light readings. Add tooltip to tell user
+what minimum detected light val is.
+-Possibly add in record readings for the first few seconds of waiting to be level.
+- Need a check on all the variables for when we put the finch beak up
+
+- On Search for light, would prefer to have 1 big title for telemetry, then a subtitle for state and a subtitle for live stats.
+Is really stupid to have these titles the same height as the main subtitles.

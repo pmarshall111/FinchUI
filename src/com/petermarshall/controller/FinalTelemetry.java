@@ -1,6 +1,5 @@
 package com.petermarshall.controller;
 
-import com.petermarshall.LightInterfaceThread;
 import com.petermarshall.SpeedLightStats;
 import com.petermarshall.TimeInStates;
 import com.petermarshall.model.FinchLiveData;
@@ -51,7 +50,7 @@ public class FinalTelemetry {
     @FXML
     private Label ovrAvg;
     @FXML
-    private PieChart stateTimePi;
+    private PieChart stateTimePie;
     @FXML
     private LineChart<Double, Integer> lightGraph;
     @FXML
@@ -81,7 +80,7 @@ public class FinalTelemetry {
         leftStarting.setText(endData.getLeftLightAtStart()+"");
         rightStarting.setText(endData.getRightLightAtStart()+"");
         leftMaxVal.setText(endData.getHighestLeftLight()+"");
-        rightMaxVal.setText(endData.getHighestLeftLight()+"");
+        rightMaxVal.setText(endData.getHighestRightLight()+"");
         leftMinVal.setText(endData.getLowestLeftLight()+"");
         rightMinVal.setText(endData.getLowestRightLight()+"");
         leftAvg.setText(endData.getAvgLeftLight(DECIMAL_PLACES));
@@ -113,17 +112,18 @@ public class FinalTelemetry {
 
     private void highlightMinVal(double leftMin, double rightMin) {
         if (leftMin < rightMin) {
-            rightMinBox.getStyleClass().add(highlightedVal);
-        } else {
             leftMinBox.getStyleClass().add(highlightedVal);
+        } else {
+            rightMinBox.getStyleClass().add(highlightedVal);
         }
     }
 
     private void setPieChart() {
         TimeInStates time = endData.getTimeInStates();
-        stateTimePi.getData().add(new PieChart.Data("Following", time.getFollowingTime()));
-        stateTimePi.getData().add(new PieChart.Data("Searching", time.getSearchingTime()));
-        stateTimePi.getData().add(new PieChart.Data("Waiting to be level", time.getWaitingTime()));
+        //order of these statements is important for matching css colours to Finch beak colours.
+        stateTimePie.getData().add(new PieChart.Data("Waiting to be level", time.getWaitingTime()));
+        stateTimePie.getData().add(new PieChart.Data("Searching", time.getSearchingTime()));
+        stateTimePie.getData().add(new PieChart.Data("Following", time.getFollowingTime()));
     }
 
     private void setLineChart() {

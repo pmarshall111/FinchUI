@@ -1,12 +1,7 @@
 package com.petermarshall.model;
 
-import com.petermarshall.FinchState;
 import com.petermarshall.LightInterfaceThread;
-import com.petermarshall.RawAndPecentage;
-import com.petermarshall.TimeInStates;
 import javafx.application.Platform;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
 
 //Class relies heavily on variables in FinchLiveData. Variables changed there affect this class.
 //However, this class is only designed for use with that class. Originally part of FinchLiveData, this class was made to make the class shorter
@@ -16,7 +11,7 @@ import static com.petermarshall.model.FinchLiveData.*;
 public class DataRetrievalThread extends Thread {
     @Override
     public void run() {
-        while (collectLiveData) {
+        while (collectLiveData.get()) {
             //thinking that we may only need this thread to start the program.
             //would need access to the Finch. Pretty easy though as we just initialise the new Finch.
             //This model would need to be passed into the controller, which could then control a flag to stop or start the program.
@@ -32,6 +27,21 @@ public class DataRetrievalThread extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            checkFinchIsStillRunning();
+        }
+    }
+
+    private void checkFinchIsStillRunning() {
+        //User can stop the program by placing the Finch upwards. So we need to update the flag from both the UI and the program.
+        if (!LightInterfaceThread.isRunning()) {
+            Platform.runLater(() -> {
+                try {
+                    collectLiveData.setValue(false);
+                } catch (NullPointerException e) {
+                    e.printStackTrace();
+                }
+            });
         }
     }
 

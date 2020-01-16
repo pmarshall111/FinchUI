@@ -13,10 +13,28 @@
     -fx-padding: 0px 5px;
 }
 
-.highlightedVal.detail {
+.regularVal {
+    -fx-padding: 2px 7px; /*SIZE DEPENDANT ON BORDER WIDTH AND PADDING OF HIGHLIGHTED VAL. ADDED TO STOP TEXT MOVING AROUND*/
+}
+
+.statLabel {
+    -fx-padding: 2px 0px; /*DEPENDANT ON MATCHING THE TOP/BOTTOM VAL OF .regularVal. LEFT/RIGHT SHOULD BE 0*/
 }
 
 #lightGraph {
     -fx-create-symbols: false;
     -fx-legend-visible: false;
 }
+
+#stateTimePie {
+    -fx-legend-visible: false;
+}
+
+.chart-pie {
+    -fx-border-color: derive(-fx-pie-color, -40%);
+    -fx-border-width: 1px;
+}
+
+.default-color0.chart-pie { -fx-pie-color: #0074D9; }
+.default-color1.chart-pie { -fx-pie-color: #FFDC00; }
+.default-color2.chart-pie { -fx-pie-color: #FF4136; }

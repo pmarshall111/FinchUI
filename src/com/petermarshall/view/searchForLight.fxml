@@ -11,7 +11,7 @@
         <StackPane prefHeight="700.0" prefWidth="600.0">
             <VBox>
                 <HBox alignment="CENTER" styleClass="titleContent">
-                    <Label styleClass="bigTitle" text="Search for Light"/>
+                    <Label styleClass="bigTitle" text="Task: Search for Light"/>
                 </HBox>
                 <VBox styleClass="mainContent">
                     <Label text="Get Started" styleClass="subtitle"/>
@@ -54,15 +54,33 @@
                             via the colour of it's beak, or below in this tab. Both display the same
                             information, so use whichever is most clear to you.
                         </Text>
-                        <GridPane styleClass="paddingBox" alignment="CENTER" vgap="10" hgap="10">
-                            <Circle fx:id="waitingCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                            <Label text="Waiting to be level" styleClass="stateLabel" fx:id="waitingLabel"
+                        <!--<GridPane styleClass="paddingBox" alignment="CENTER" vgap="10" hgap="10">-->
+                            <!--<Circle fx:id="waitingCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="0"/>-->
+                            <!--<Label text="Waiting to be level" styleClass="stateLabel" fx:id="waitingLabel"-->
+                                   <!--GridPane.columnIndex="1" GridPane.rowIndex="0"/>-->
+                            <!--<Circle fx:id="searchCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="1"/>-->
+                            <!--<Label text="Searching for a Light" styleClass="stateLabel" fx:id="searchLabel"-->
+                                   <!--GridPane.columnIndex="1" GridPane.rowIndex="1"/>-->
+                            <!--<Circle fx:id="followCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="2"/>-->
+                            <!--<Label text="Following Light" styleClass="stateLabel" fx:id="followLabel"-->
+                                   <!--GridPane.columnIndex="1" GridPane.rowIndex="2"/>-->
+                        <!--</GridPane>-->
+
+                        <GridPane styleClass="paddingBox" alignment="CENTER" vgap="10">
+                            <HBox fx:id="waitingCircleBox" styleClass="stateCircleContainer" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <Circle fx:id="waitingCircle" radius="10"/>
+                            </HBox>
+                            <Label text="Waiting to be level" maxHeight="Infinity" styleClass="finchStateLabel" fx:id="waitingLabel"
                                    GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                            <Circle fx:id="searchCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                            <Label text="Searching for a Light" styleClass="stateLabel" fx:id="searchLabel"
+                            <HBox fx:id="searchCircleBox" styleClass="stateCircleContainer" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <Circle fx:id="searchCircle" radius="10"/>
+                            </HBox>
+                            <Label text="Searching for a Light" maxHeight="Infinity" styleClass="finchStateLabel" fx:id="searchLabel"
                                    GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                            <Circle fx:id="followCircle" radius="10" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                            <Label text="Following Light" styleClass="stateLabel" fx:id="followLabel"
+                            <HBox fx:id="followCircleBox" styleClass="stateCircleContainer" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                            <Circle fx:id="followCircle" radius="10"/>
+                            </HBox>
+                            <Label text="Following Light" maxHeight="Infinity" styleClass="finchStateLabel" fx:id="followLabel"
                                    GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                         </GridPane>
                     </VBox>
