@@ -11,10 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
 
-public class SearchForLight {
-
-    @FXML
-    private Button backBtn;
+public class SearchForLightTask {
 
     @FXML
     private Button stopBtn;
@@ -88,11 +85,11 @@ public class SearchForLight {
 
     @FXML
     void goToMainMenu() {
-        if (FinchLiveData.isProgramRunning()) {
-            endSearch();
-        }
+        endSearch();
         ViewManager.showMainMenu();
     }
+
+
 
     @FXML
     void startSearching() {
@@ -207,7 +204,14 @@ public class SearchForLight {
 
     @FXML
     void endSearch() {
-        FinchLiveData.stopProgram();
+        try {
+            if (FinchLiveData.isProgramRunning()) {
+                FinchLiveData.stopProgram();
+            }
+        } catch (NullPointerException e) {
+            //do nothing. means we haven't tried to start the program yet so FinchLiveData has not yet been initialised
+//            System.out.println("Gone back to main menu from Search For Light before starting program.");
+        }
     }
 
     private void showProgramEnded() {

@@ -1,4 +1,4 @@
-#backBtn {
+.backBtn {
     -fx-cursor: hand;
     -fx-background-image: url("../icons/back24px.png");
     -fx-background-size: 24 24;
@@ -9,5 +9,22 @@
     -fx-min-width: 25px;
     -fx-min-height: 25px;
 
-    -fx-padding: 5px 22px 5px 44px;
+    -fx-padding: 8px 22px 8px 44px;
+
+    -fx-border-radius: 25;
+    -fx-border-width: 3;
+    -fx-border-color: black;
+}
+
+#closeBtn {
+    -fx-cursor: hand;
+    -fx-min-width: 25px;
+    -fx-min-height: 25px;
+    -fx-background-radius: 25px;
+
+    -fx-padding: 8px 22px;
+
+    -fx-border-radius: 25;
+    -fx-border-width: 3;
+    -fx-border-color: black;
 }

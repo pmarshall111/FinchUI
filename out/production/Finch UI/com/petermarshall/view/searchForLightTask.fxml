@@ -5,13 +5,15 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 <?import java.net.*?>
+<?import javafx.scene.shape.Rectangle?>
 <ScrollPane xmlns="http://javafx.com/javafx/8.0.172-ea"
-            xmlns:fx="http://javafx.com/fxml" fx:controller="com.petermarshall.controller.SearchForLight">
+            xmlns:fx="http://javafx.com/fxml" fx:controller="com.petermarshall.controller.SearchForLightTask">
     <content>
         <StackPane prefHeight="700.0" prefWidth="600.0">
             <VBox>
                 <HBox alignment="CENTER" styleClass="titleContent">
-                    <Label styleClass="bigTitle" text="Task: Search for Light"/>
+                    <Label styleClass="bigTitle" text="Task: "/>
+                    <Label styleClass="bigTitle, searchForLightTitle" text="Search for Light" />
                 </HBox>
                 <VBox styleClass="mainContent">
                     <Label text="Get Started" styleClass="subtitle"/>
@@ -44,84 +46,6 @@
                             <CheckBox fx:id="showTelemetry" text="Show telemetry after run" selected="true"/>
                         </HBox>
                     </VBox>
-
-                    <!--<Label text="Finch State" styleClass="subtitle"/>-->
-                    <!--<Separator/>-->
-                    <!--<VBox styleClass="subContent">-->
-                        <!--<Text wrappingWidth="550" styleClass="detail">-->
-                            <!--The Finch can be in 1 of 2 states; Searching for a Light, or Following a Light. It-->
-                            <!--can be seen which state the Finch is in-->
-                            <!--via the colour of it's beak, or from the lights below. Both display the same-->
-                            <!--information, so use whichever is most clear to you.-->
-                        <!--</Text>-->
-                        <!--<GridPane styleClass="paddingBox" alignment="CENTER" vgap="10">-->
-                            <!--<HBox fx:id="waitingCircleBox" styleClass="stateCircleContainer" GridPane.columnIndex="0" GridPane.rowIndex="0">-->
-                            <!--<Circle fx:id="waitingCircle" radius="10"/>-->
-                            <!--</HBox>-->
-                            <!--<Label text="Waiting to be level" maxHeight="Infinity" styleClass="finchStateLabel" fx:id="waitingLabel"-->
-                                   <!--GridPane.columnIndex="1" GridPane.rowIndex="0"/>-->
-                            <!--<HBox fx:id="searchCircleBox" styleClass="stateCircleContainer" GridPane.columnIndex="0" GridPane.rowIndex="1">-->
-                            <!--<Circle fx:id="searchCircle" radius="10"/>-->
-                            <!--</HBox>-->
-                            <!--<Label text="Searching for a Light" maxHeight="Infinity" styleClass="finchStateLabel" fx:id="searchLabel"-->
-                                   <!--GridPane.columnIndex="1" GridPane.rowIndex="1"/>-->
-                            <!--<HBox fx:id="followCircleBox" styleClass="stateCircleContainer" GridPane.columnIndex="0" GridPane.rowIndex="2">-->
-                            <!--<Circle fx:id="followCircle" radius="10"/>-->
-                            <!--</HBox>-->
-                            <!--<Label text="Following Light" maxHeight="Infinity" styleClass="finchStateLabel" fx:id="followLabel"-->
-                                   <!--GridPane.columnIndex="1" GridPane.rowIndex="2"/>-->
-                        <!--</GridPane>-->
-                    <!--</VBox>-->
-                    <!--<Label text="Live Telemetry" styleClass="subtitle"/>-->
-                    <!--<Separator/>-->
-                    <!--<VBox styleClass="subContent">-->
-                        <!--<HBox alignment="CENTER">-->
-                            <!--<Label text="Current run time: " styleClass="detail"/>-->
-                            <!--<Label fx:id="timeElapsed" text="0m 0s" styleClass="detail"/>-->
-                        <!--</HBox>-->
-                        <!--<GridPane styleClass="paddingBox" alignment="CENTER" hgap="10" vgap="10">-->
-                            <!--<HBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3"-->
-                                  <!--alignment="CENTER">-->
-                                <!--<fx:define>-->
-                                    <!--<ToggleGroup fx:id="group"/>-->
-                                <!--</fx:define>-->
-                                <!--<ToggleButton text="Raw" toggleGroup="$group" selected="true" fx:id="rawSelected"/>-->
-                                <!--<ToggleButton text="Perc" toggleGroup="$group"/>-->
-                            <!--</HBox>-->
-                            <!--<Label text="Light Intensity:" styleClass="detail" GridPane.columnIndex="0"-->
-                                   <!--GridPane.rowIndex="1"/>-->
-                            <!--<VBox GridPane.columnIndex="1" GridPane.rowIndex="1">-->
-                                <!--<HBox alignment="CENTER">-->
-                                    <!--<Label text="Left: " styleClass="detail"/>-->
-                                    <!--<Label text="-1" fx:id="leftLight" styleClass="detail"/>-->
-                                <!--</HBox>-->
-                                <!--<ProgressBar fx:id="leftLightBar"/>-->
-                            <!--</VBox>-->
-                            <!--<VBox GridPane.columnIndex="2" GridPane.rowIndex="1">-->
-                                <!--<HBox alignment="CENTER">-->
-                                    <!--<Label text="Right: " styleClass="detail"/>-->
-                                    <!--<Label text="-1" fx:id="rightLight" styleClass="detail"/>-->
-                                <!--</HBox>-->
-                                <!--<ProgressBar fx:id="rightLightBar"/>-->
-                            <!--</VBox>-->
-                            <!--<Label text="Wheel Velocity:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>-->
-                            <!--<VBox GridPane.columnIndex="1" GridPane.rowIndex="2">-->
-                                <!--<HBox alignment="CENTER">-->
-                                    <!--<Label text="Left: " styleClass="detail"/>-->
-                                    <!--<Label text="-1" fx:id="leftWheel" styleClass="detail"/>-->
-                                <!--</HBox>-->
-                                <!--<ProgressBar fx:id="leftWheelBar"/>-->
-                            <!--</VBox>-->
-                            <!--<VBox GridPane.columnIndex="2" GridPane.rowIndex="2">-->
-                                <!--<HBox alignment="CENTER">-->
-                                    <!--<Label text="Right: " styleClass="detail"/>-->
-                                    <!--<Label text="-1" fx:id="rightWheel" styleClass="detail"/>-->
-                                <!--</HBox>-->
-                                <!--<ProgressBar fx:id="rightWheelBar"/>-->
-                            <!--</VBox>-->
-                        <!--</GridPane>-->
-                    <!--</VBox>-->
-
                     <Label text="Telemetry" styleClass="subtitle"/>
                     <Separator/>
                     <VBox styleClass="subContent">
@@ -199,10 +123,13 @@
                         </GridPane>
                     </VBox>
                 </VBox>
+                <HBox styleClass="subContent"></HBox>
             </VBox>
             <AnchorPane pickOnBounds="false">
-                <Button text="Back" fx:id="backBtn" onMouseClicked="#goToMainMenu" AnchorPane.leftAnchor="25.0"
-                        AnchorPane.topAnchor="25.0"/>
+                <Button text="Back to Main Menu" styleClass="backBtn" onMouseClicked="#goToMainMenu" AnchorPane.leftAnchor="25.0"
+                        AnchorPane.topAnchor="12"/>
+                <Button text="Back to Main Menu" styleClass="backBtn" onMouseClicked="#goToMainMenu" AnchorPane.leftAnchor="25.0"
+                        AnchorPane.bottomAnchor="12"/>
             </AnchorPane>
         </StackPane>
     </content>
@@ -210,7 +137,7 @@
         <URL value="@css/backBtn.css"/>
         <URL value="@css/startStopBtn.css"/>
         <URL value="@css/fontSizes.css"/>
-        <URL value="@css/searchForLight.css"/>
+        <URL value="@css/searchForLightTask.css"/>
         <URL value="@css/separator.css"/>
         <URL value="@css/containerPadding.css"/>
     </stylesheets>

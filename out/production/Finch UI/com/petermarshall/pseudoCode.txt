@@ -1,0 +1,282 @@
+
+Algorithm 1: searchForLight(Finch, ProgramRunning) {
+    Input: Finch is a class that allows us to access the Finch robot, ProgramRunning is a boolean.
+
+    1)  Set NumbLightDetections = 0
+    2)  Set ScriptStartTime = current time
+    3)  Set LeftWheelVelocity = 0
+    4)  Set RightWheelVelocity = 0
+    6)  Set FinchState = null
+    5)  Set StatList = new list
+    7)  Set MinLightForDetection = 80
+    8) waitForFinchToBeLevel(Finch, FinchState, LeftWheelVelocity, RightWheelVelocity)
+    9) initialiseSearch(Finch, FinchState, LeftWheelVelocity, RightWheelVelocity)
+    10) detectLight(Finch, ProgramRunning, MinLightForDetection, LeftWheelVelocity, RightWheelVelocity)
+    11) stopFinch(LeftWheelVelocity, RightWheelVelocity)
+    
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+
+
+Algorithm 2: waitForFinchToBeLevel(Finch, FinchState, LeftWheelVelocity, RightWheelVelocity) {
+    Input: Finch is a class that allows us to access the Finch robot, FinchState is a String, LeftWheelVelocity is an integer between 255 and -255,
+    RightWheelVelocity is an integer between 255 and -255.
+
+    1) Set Finch beak to blue
+    2) Set FinchState = Waiting to be level
+    3) Set TimeLastMoved = current time
+    4) while (timeSince(TimeLastMoved) < 3seconds) //TODO: probably dont need to implement this timeSince function since its pseudocode. Is fairly straight forward
+    5)    if (finchIsNotLevel(Finch))
+    6)        set TimeLastMoved = current time
+    7)    endif
+    8)    recordLightReadings(Finch, FinchState, LeftWheelVelocity, RightWheelVelocity)
+    9) end while
+
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+Algorithm 3: initialiseSearch(Finch, FinchState, LeftWheelVelocity, RightWheelVelocity) {
+    Input: Finch is a class that allows us to access the Finch robot, FinchState is a String, LeftWheelVelocity is an integer between 255 and -255,
+    RightWheelVelocity is an integer between 255 and -255.
+
+    1) Set FinchState = Searching
+    2) Set Finch beak to Yellow
+    3) Set leftWheelVelocity = 100
+    4) Set rightWheelVelocity = 100
+    
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+Algorithm 3: detectLight(Finch, FinchState, LeftWheelVelocity, RightWheelVelocity, ProgramRunning, MinLightForDetection) {
+    Input: Finch is a class that allows us to access the Finch robot, FinchState is a String, LeftWheelVelocity is an integer between 255 and -255,
+    RightWheelVelocity is an integer between 255 and -255, ProgramRunning is a boolean, MinLightForDetection is an integer between 0 and 255.
+
+    1)  Set LastAction = current time
+    2)  while (ProgramRunning)
+    3)      if (getAverageLight(Finch) > MinLightForDetection)
+    4)          finchFollowsTheLight(Finch, MinLightForDetection)
+    5)          Set LastAction = current time
+    6)      end if
+    7)      if (getAverageLight(Finch) <= MinLightForDetection AND timeSince(LastAction) > 4seconds)
+    8)          finchSearchesForLight(Finch)
+    9)          Set LastAction = current time
+    10)     end if
+    11)     recordLightReadings(Finch)
+    12)     checkFinchBeakUp(Finch)
+    13) end while
+    
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+Algorithm 4: getAverageLight(Finch) {
+    Input: Finch is a class that allows us to access the Finch robot
+    
+    1) Set LeftLight = left light of finch
+    2) Set RightLight = right light of finch
+    3) Set Avg = (LeftLight + RightLight) / 2
+    
+    Output: Avg
+}
+
+TODO: complete once finished testing the code.
+TODO: need to add in a setting where the brightness of the Finch beak is proportional to the brightness of the light recorded.
+Algorithm 5: finchFollowsTheLight(finch, FinchState, numbLightDetections, leftWheelVelocity, rightWheelVelocity, statList, minLightIntensityForDetection) {
+    if (FinchState != following)
+        numbLightDetections = numbLightDetections + 1
+        FinchState = following
+        Set Finch beak to Red
+    end if
+
+    Set TargetLightIntensity = 100
+
+    Set MaxLeftIncrease = finch max wheel velocity - leftWheelVelocity
+    Set MaxLeftDecrease = finch min wheel velocity - leftWheelVelocity
+    Set MaxRightIncrease = finch max wheel velocity - rightWheelVelocity
+    Set MaxRightDecrease = finch min wheel velocity - rightWheelVelocity
+
+    Set LeftDiffFromTarget = TargetLightIntensity - left light of finch
+    Set RightDiffFromTarget = TargetLightIntensity - right light of finch
+
+    Set LeftDiffFromNoDetection = left light of finch - minLightIntensityForDetection
+    Set RightDiffFromNoDetection = right light of finch - minLightIntensityForDetection
+
+
+    if left diff from target is big and left diff from no detection is small, BIG INCREASE IN WHEEL SPEED
+    if diff from target is small and diff from no detection is big, WHEEL SPEED CLOSE TO ZERO
+    if diff from target is big and greater than target, we don't need to think about distance to no detection
+
+
+    Set LeftDiffRatio = LeftDiffFromTarget/LeftDiffFromNoDetection
+    Set RightDiffRatio = RightDiffFromTarget/RightDiffFromNoDetection
+
+    if (LeftDiffRatio > 0)
+        leftWheelVelocity = MaxLeftIncrease *
+    end if
+
+
+
+    also probably need a concept of how close it is to the boundary. If we're very close to the limit where we do not collect
+    light anymore then we need to increase quickly.
+
+    then we want to get the difference between the 2 left and right light readings and scale difference accordingly
+
+    want to get the difference of the current light readings to those previously and if we are moving away from the target light intensity
+    then we need to increase as a whole. else we need to decrease.
+
+    So we want to set the wheelspeed based on 2 items: the
+}
+
+
+Algorithm 6: finchSearchesForLight(Finch, FinchState, LeftWheelVelocity, RightWheelVelocity) {
+    Input: Finch is a class that allows us to access the Finch robot, FinchState is a String, LeftWheelVelocity is an integer between 255 and -255,
+    RightWheelVelocity is an integer between 255 and -255.
+
+    1) Set FinchState = Searching
+    2) Set Finch beak to Yellow
+    3) Set LeftWheelVelocity = 0
+    4) Set RightWheelVelocity = 0
+    5) pauseThread(0.5)
+    6) turnFinch90Degrees(Finch, LeftWheelVelocity, RightWheelVelocity)
+    7) moveForwardAtLowSpeed()
+    
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+
+Algorithm 7: pauseThread(xSeconds) {
+    Input: xSeconds is a positive integer.
+
+    1) Set StartTime = current time
+    2) while (timeSince(StartTime) < xSeconds)
+    3) end while
+    
+    Output: No output.
+}
+
+Algorithm 8: timeSince(StartTime) {
+    Input: StartTime is a timestamp of type number
+
+    1) Set CurrentTime = current time of system
+    2) Set Diff = CurrentTime - StartTIme
+
+    Output: Diff
+}
+
+
+Algorithm 8: turnFinch90Degrees(Finch, LeftWheelVelocity, RightWheelVelocity) {
+    Input: Finch is a class that allows us to access the Finch robot, LeftWheelVelocity is an integer between 255 and -255,
+    RightWheelVelocity is an integer between 255 and -255.
+
+    1) Set random = randomly chooses a number between 0 and 1
+    2) if (random > 0.5)
+    3)     finchTurnLeft(LeftWheelVelocity, RightWheelVelocity)
+    4) else
+    5)     finchTurnRight(LeftWheelVelocity, RightWheelVelocity)
+    6) end if
+
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+Algorithm 9: finchTurnLeft(LeftWheelVelocity, RightWheelVelocity) {
+    Input: LeftWheelVelocity is an integer between 255 and -255, RightWheelVelocity is an integer between 255 and -255.
+
+    1) Set LeftWheelVelocity = -100
+    2) Set RightWheelVelocity = 100
+    3) pauseThread(3)
+
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+Algorithm 10: finchTurnRight(LeftWheelVelocity, RightWheelVelocity) {
+    Input: LeftWheelVelocity is an integer between 255 and -255, RightWheelVelocity is an integer between 255 and -255.
+
+    1) Set LeftWheelVelocity = 100
+    2) Set RightWheelVelocity = -100
+    3) pauseThread(3)
+
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+Algorithm 11: moveForwardAtLowSpeed(LeftWheelVelocity, RightWheelVelocity) {
+    Input: LeftWheelVelocity is an integer between 255 and -255, RightWheelVelocity is an integer between 255 and -255.
+
+    1) Set LeftWheelVelocity = 100
+    2) Set RightWheelVelocity = 100
+
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+
+Algorithm 12: recordLightReadings(StatList) {
+    Input: StatList is a list containing entries of stats at certain points throughout the execution.
+
+    1) Bump StatList and add (FinchState, left light of finch, right light of finch, leftWheelVelocity, rightWheelVelocity, current time of system)
+
+    Output: No output.
+}
+
+Algorithm 13: checkFinchBeakUp(Finch, ProgramRunning) {
+    Input: Finch is a class that allows us to access the Finch robot, ProgramRunning is a boolean.
+
+    1) if (Finch beak is up)
+    2)     ProgramRunning = false
+    3) end if
+
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+
+Algorithm 14: stopFinch(Finch, LeftWheelVelocity, RightWheelVelocity) {
+    Input: Finch is a class that allows us to access the Finch robot, LeftWheelVelocity is an integer between 255 and -255,
+    RightWheelVelocity is an integer between 255 and -255.
+
+    1) LeftWheelVelocity = 0
+    2) RightWheelVelocity = 0
+    3) Turn Finch beak off
+
+    Output: Output is shown as physical actions from Finch robot.
+}
+
+
+
+
+Algorithm 15: GUI(Finch) {
+    Input: Finch is a class that allows us to access the Finch robot.
+
+    1)  Initialise Finch
+    2)  Load main menu
+    3)  if (user clicks on Search for Light task)
+    4)      Load Search for Light task page
+    5)      while (user doesn't click on back to main menu button)
+    6)          Set ProgramRunning = false
+    7)          if (user clicks on start button)
+    8)              Set ProgramRunning = true
+    9)              SearchForLight(Finch, ProgramRunning)
+    10)             Display the current light values and wheel speeds of the Finch and also what state it's in
+    11)         end if
+    12)         if (user clicks on stop button AND ProgramRunning = true)
+    13)             Set ProgramRunning = false
+    14)             if (user requests to see final telemetry)
+    15)                 Produce new window with all stats asked for in Requirements section
+    16)             end if
+    17)         end if
+    18)     end while
+    19) endif
+
+    Output: Output is shown as physical actions from Finch robot and also as updates to the User Interface.
+}
+
+TODO: edit pseudocode to reflect the flow charts
+
+
+
+
+
+
+
+
+
+
+
+

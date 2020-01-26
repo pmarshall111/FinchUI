@@ -13,22 +13,23 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Rectangle?>
 <ScrollPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.petermarshall.controller.FinalTelemetry"
             prefHeight="400.0" prefWidth="600.0" vvalue="-Infinity">
     <content>
         <VBox>
-            <HBox alignment="CENTER">
+            <HBox alignment="CENTER" styleClass="titleContent">
                 <Label text="Final Stats" styleClass="bigTitle"/>
             </HBox>
             <VBox styleClass="mainContent">
                 <Label text="About" styleClass="subtitle"/>
                 <Separator/>
                 <VBox styleClass="subContent">
-                    <Text wrappingWidth="550">Below are the aggregated stats from the most recent run of the Finch searching for a light. Note
+                    <Text wrappingWidth="550" styleClass="detail">Below are the aggregated stats from the most recent run of the Finch searching for a light. Note
                     that you can keep this window open and compare the stats with a second run.</Text>
-                    <Text>Additionally, any values requested as a key requirement are highlighted with a border.</Text>
+                    <Text styleClass="detail">Additionally, any values requested as a key requirement are highlighted with a border.</Text>
                 </VBox>
                 <Label text="General" styleClass="subtitle"/>
                 <Separator/>
@@ -111,5 +112,6 @@
         <URL value="@css/separator.css"/>
         <URL value="@css/finalTelemetry.css"/>
         <URL value="@css/containerPadding.css"/>
+        <URL value="@css/closeBtn.css"/>
     </stylesheets>
 </ScrollPane>

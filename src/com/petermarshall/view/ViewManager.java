@@ -3,7 +3,6 @@ package com.petermarshall.view;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,6 +15,8 @@ public class ViewManager {
     //required to have singleton within static class because getClass() method used to load in fxml cannot be called from static context.
     //could make decision to initialise all controllers through code rather than fxml, and pass in viewManager as argument to them? Will see how messy it gets.
     private static ArrayList<Stage> popupSearchStages;
+    private final static int stageHeight = 800;
+    private final static int stageWidth = 700;
 
     public static void init(Stage stage) {
         mainStage = stage;
@@ -32,7 +33,7 @@ public class ViewManager {
     private void showMainMenuInstance() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-            mainStage.setScene(new Scene(root, 600, 600));
+            mainStage.setScene(new Scene(root, stageWidth, stageHeight));
             mainStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,8 +46,8 @@ public class ViewManager {
 
     private void showSearchForLightInstance() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("searchForLight.fxml"));
-            mainStage.setScene(new Scene(root, 600, 600));
+            Parent root = FXMLLoader.load(getClass().getResource("searchForLightTask.fxml"));
+            mainStage.setScene(new Scene(root, stageWidth, stageHeight));
             mainStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -64,9 +65,8 @@ public class ViewManager {
             popup.initOwner(mainStage);
             //popup.initModality(Modality.APPLICATION_MODAL); Unsure whether this is needed, or the line above. Would potentially block the user from doing anything with the old window before closing.
             //would probably prefer the user to be able to keep that window open to compare runs.
-            //TODO: possibly we should add a time when printed feature, or a thing to count what run it is.
             Parent root = FXMLLoader.load(getClass().getResource("finalTelemetry.fxml"));
-            popup.setScene(new Scene(root, 600, 600));
+            popup.setScene(new Scene(root, stageWidth, stageHeight));
             popup.show();
         } catch (IOException e) {
             e.printStackTrace();

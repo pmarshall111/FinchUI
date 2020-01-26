@@ -17,24 +17,30 @@
 
 #lightBtn {
     -fx-background-image: url("../icons/light24px.png");
+    -fx-background-color: #9AD7A4;
 }
 
 #shapeBtn {
     -fx-background-image: url("../icons/shape24px.png");
+    -fx-background-color: #F0CA86
 }
 
 #naviBtn {
     -fx-background-image: url("../icons/navigate24px.png");
+    -fx-background-color: #D4F4FE
 }
 
 #zigBtn {
     -fx-background-image: url("../icons/zigzag24px.png");
+    -fx-background-color: #DDE59B
 }
 
 #objectBtn {
     -fx-background-image: url("../icons/object24px.png");
+    -fx-background-color: #BFC9FD
 }
 
 #danceBtn {
     -fx-background-image: url("../icons/dance24px.png");
+    -fx-background-color: #DAB4E5
 }

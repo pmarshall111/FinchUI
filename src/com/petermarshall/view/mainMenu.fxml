@@ -3,24 +3,32 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<VBox prefHeight="700.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.petermarshall.controller.MainMenu">
-    <children>
-        <HBox alignment="CENTER">
-            <Label styleClass="bigTitle" text="Finch UI" />
-        </HBox>
-        <VBox styleClass="mainContent">
-            <HBox>
-                <Label styleClass="subtitle" text="Tasks" />
+<?import javafx.scene.shape.Rectangle?>
+<ScrollPane prefHeight="700.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.petermarshall.controller.MainMenu">
+    <content>
+        <VBox><!-- Needed here as ScrollPane only works with 1 child-->
+            <HBox alignment="CENTER" styleClass="titleContent">
+                <Label styleClass="bigTitle" text="Finch UI" />
             </HBox>
-            <Separator />
-            <HBox>
-                <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10" prefWrapLength="1060.0" vgap="10" HBox.hgrow="NEVER">
+            <VBox styleClass="mainContent">
+                <Label styleClass="subtitle" text="About" />
+                <Separator />
+                <VBox styleClass="subContent">
+                    <Text styleClass="detail" wrappingWidth="550">
+                        Finch UI is a programs that you can use to control your Finch. Select any of the 6 tasks listed below
+                        and your Finch will perform them for you. Each task also contains more detailed information about what the Finch is meant to do. Try it now!
+                    </Text>
+                </VBox>
+                <Label styleClass="subtitle" text="Tasks" />
+                <Separator />
+                <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10" prefWrapLength="550.0" styleClass="subContent" vgap="10" HBox.hgrow="NEVER">
                     <Button fx:id="lightBtn" onMouseClicked="#goToSearchForLight" styleClass="task" text="Search for Light" />
                     <Button fx:id="shapeBtn" styleClass="task" text="Draw Shape" />
                     <Button fx:id="naviBtn" styleClass="task" text="Navigate" />
@@ -28,16 +36,15 @@
                     <Button fx:id="objectBtn" styleClass="task" text="Detect Object" />
                     <Button fx:id="danceBtn" styleClass="task" text="Dance" />
                 </FlowPane>
-            </HBox>
+            </VBox>
         </VBox>
-    </children>
-
+    </content>
 
     <stylesheets>
         <URL value="@css/taskButtons.css" />
         <URL value="@css/fontSizes.css" />
-        <URL value="@css/homepage.css" />
+        <URL value="@css/mainMenu.css" />
         <URL value="@css/separator.css" />
+        <URL value="@css/containerPadding.css" />
     </stylesheets>
-
-</VBox>
+</ScrollPane>

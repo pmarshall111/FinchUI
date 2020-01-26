@@ -2,8 +2,6 @@ Want to make sure the only class from our other project we can access is the int
 
 Need to add testing to both files.
 
-Add centered panes so when we resize window the content always stays in the center
-
 Stop SearchForLight from jumping to the top when we click stop.
 
 Try out fast update frequency to see how that makes the program.
@@ -12,17 +10,25 @@ Try out fast update frequency to see how that makes the program.
 - Possibly about page as well basically just listing what technology was used to create the project.
 
 
-BUGS
-- When state is searching for light, wheel velocity is always 100
--Possibly add in record readings for the first few seconds of waiting to be level.
 
-
-- Also would like to line up text even if it has a border round it.
-- Add in tooltip for the pie chart so we can see the time in each section. Same for light readings. Add tooltip to tell user
-what minimum detected light val is.
-- On Search for light, would prefer to have 1 big title for telemetry, then a subtitle for state and a subtitle for live stats.
-Is really stupid to have these titles the same height as the main subtitles.
+Would like to
 
 - Maybe put the back button in a solid bar across the top, above the title. The same length as the separator.
 - Need colour structure over the page to add interest. Not too headliny though as that's what the buttons etc are for.
 - Would be cool to colour the line on line chart based on what state the finch is in at that time.
+
+
+Need to be done before 31st Jan:
+
+- Back button top and bottom
+- Nice colourscheme
+- Fix bug that stops final stats from coming up
+
+
+Need to be done after
+- Need to include a credits section for the icons usage.
+- Possibly about page as well basically just listing what technology was used to create the project.
+- Increase scrolling speed of scrollpane
+- Add centered panes so when we resize window the content always stays in the center
+- Custom cursor for things with tooltips
+- Stop Finch after closing program window

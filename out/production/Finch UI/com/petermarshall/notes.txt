@@ -1,49 +1,36 @@
-MVC architecture
+Plan:
 
-The model should contain the actual Finch knowledge. This updates the view. User manipulating the view alerts the controller which updates the model.
+- Definitely going to need better maths for how fast our finch is going. We only really get up to about 150 wheel vel.
+So only 60% of max speed. Rather disappointing.
 
-View contains info stored in the model. Controller handles user actions to the view. Model contains raw data.
-
-_______
-
-Lots of nice ideas for extensions. But first, we must just get the base program working, being mindful of where we could want to expand. Then once we're done
-we can think about adding additional features.
-
-______
-
-Shared Resources controllers
-
-If we want to share information through controllers, we can either create a Singleton class with all the logic in there. Or we can create each controller using
-the unique shared resources. I feel like a singleton is safer. In this tutorial, the guy decides to create each controller individually passing in the arguments.
-
-He also has them extend an abstract class so that when he is initialising his scenes in the view part of the code, controllers can be passed in as an argument and nothing else.
-
-If we just use a Singleton class as well then we do not need to set the Controller to an fxml file using code like this guy does in the tutorial. It can be contained within the fxml.
-I feel like he has overcomplicated things somewhat to avoid using a Singleton class. Perhaps there is another reason for it...
-
-_______
-
-A bean is a JavaFX class whose only responsibility is to contain data that will be deisplayed.
-I believe we can use SimpleStringProperty from JavaFX Beans package to bind our data to our model so the view can be updated whenever the model is.
+- Potentially need to try it out in rooms of different ambient lights. Could forsee a situation where I take in my Finch to show but have only tested the program in dark rooms
+so the light doesn't work so well.
 
 
+Could do something simple like just making it go 255 if far and 0 if close
 
-_______
-
-Plan for controller and changing views
-
-I feel like there should just be 1 class within the view package called ViewManager, where the controllers can call methods to change the views.
-
-______
-
-TODOS:
-
-Connect up start and stop buttons.
-    - Find out how to interact with new thread from different thread.
-
-Nice layout for Final Telemetry page
-Nice layout for things in SearchForLight accordion
-Link up 2 programs. On end start up Final telemetry page
-Add colour.
+As the intensity nears the min intensity needed for light detection we need to go super fast.
 
 
+Changes we need to make.
+
+- Ideally if it loses the light we must assume that it has gone out of range and shoot forward till we find it?
+- Smoother operation?
+- Do we want to dynamically set the min light intensity depending on the environment???
+- Split finchFollow into 2 funcs
+- Decide whether we want to keep this finchKeepDistance, or perhaps do something like finchInterested, finchScared. Where it turns around and runs away from the light. Definitely keep
+the keepDistance around though in case we want to do something with it.
+- Potentially an opportunity to add an additional circuit on top of the finch with a switch, which could activate the thermometer? What would that do???
+- Change in light intensity needs to be brighter and proportional to how different it is to the minimum light intensity we're looking to catch
+
+
+When get home:
+
+- Try out all 4 different algorithms for keeping the distance constant and edit default vals to see if they become more effective.
+- Check that setting default value for when to detect light and when to keep dstance is working
+- Another way could be to store how we changed each of the wheel velocities in the SpeedLightStats. If we increased them but the light is still moving
+further away we need to massively, massively increase them. Basically if we accelerate but they're still moving away from us, massively up the speed.
+
+
+Flowchart todos:
+- Add Input/Output processes to setting the Finch wheel speeds.

@@ -39,7 +39,7 @@ public class DataRetrievalThread extends Thread {
             Platform.runLater(() -> {
                 try {
                     collectLiveData.setValue(false);
-                } catch (NullPointerException e) {
+                } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                     e.printStackTrace();
                 }
             });
@@ -50,7 +50,7 @@ public class DataRetrievalThread extends Thread {
         Platform.runLater(() -> {
             try {
                 currentState.set(LightInterfaceThread.getCurrentFinchState());
-            } catch (NullPointerException e) {
+            } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 //do nothing. Means we've tried to get state before there are any records
             }
         });
@@ -60,7 +60,7 @@ public class DataRetrievalThread extends Thread {
         Platform.runLater(() -> {
             try {
                 currLeftVelStats.set(LightInterfaceThread.getLatestLeftVelStats());
-            } catch (NullPointerException e) {
+            } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 //do nothing. Means we've tried to get state before there are any records
             }
         });
@@ -70,8 +70,8 @@ public class DataRetrievalThread extends Thread {
         Platform.runLater(() -> {
             try {
                 currRightVelStats.set(LightInterfaceThread.getLatestRightVelStats());
-            } catch (NullPointerException e1) {
-                e1.printStackTrace();
+            } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+                e.printStackTrace();
             }
         });
     }
@@ -80,7 +80,7 @@ public class DataRetrievalThread extends Thread {
         Platform.runLater(() -> {
             try {
                 currLeftLightStats.set(LightInterfaceThread.getLatestLeftLightStats());
-            } catch (NullPointerException e) {
+            } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();
             }
         });
@@ -90,7 +90,7 @@ public class DataRetrievalThread extends Thread {
         Platform.runLater(() -> {
             try {
                 currRightLightStats.set(LightInterfaceThread.getLatestRightLightStats());
-            } catch (NullPointerException e) {
+            } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();
             }
         });
@@ -102,7 +102,7 @@ public class DataRetrievalThread extends Thread {
                 timeElapsed.set(
                         TimeFormat.getMinsSecsFromNanoSecs(LightInterfaceThread.getTimeElapsedInNS())
                 );
-            } catch (NullPointerException e) {
+            } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();
             }
         });
