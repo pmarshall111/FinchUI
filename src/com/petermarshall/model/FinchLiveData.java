@@ -61,7 +61,9 @@ public abstract class FinchLiveData { //TODO decide if we can simplify this file
     
     public static void stopProgram() {
         collectLiveData.set(false);
-        searchForLightThread.stopProgram();
+        if (searchForLightThread != null) {
+            searchForLightThread.stopProgram();
+        }
     }
 
     public static boolean isProgramRunning() {

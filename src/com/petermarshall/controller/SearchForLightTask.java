@@ -4,8 +4,6 @@ import com.petermarshall.LightInterfaceThread;
 import com.petermarshall.RawAndPecentage;
 import com.petermarshall.model.FinchLiveData;
 import com.petermarshall.view.ViewManager;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -111,34 +109,10 @@ public class SearchForLightTask {
 
     @FXML
     private void bindData() {
-        timeElapsed.textProperty().bind(FinchLiveData.timeElapsedInNsProperty()); //TODO: since we're moving display logic to here we should put the time func in here too.
-        //need to figure out how to bind based on a flag.
-
-
+        timeElapsed.textProperty().bind(FinchLiveData.timeElapsedInNsProperty());
         FinchLiveData.currentStateProperty().addListener((observable, oldValue, newValue) -> {
-//            String style = "selectedBorder";
-//            waitingBox.getStyleClass().remove(style);
-//            followBox.getStyleClass().remove(style);
-//            searchBox.getStyleClass().remove(style);
-//
-//            switch (newValue){
-//                case WAITING_TO_BE_LEVEL:
-//                    waitingBox.getStyleClass().add(style);
-//                    break;
-//                case FOLLOWING:
-//                    followBox.getStyleClass().add(style);
-//                    break;
-//                case SEARCH:
-//                    searchBox.getStyleClass().add(style);
-//            }
 
-            waitingCircleBox.getStyleClass().remove(CIRCLE_STYLE);
-            followCircleBox.getStyleClass().remove(CIRCLE_STYLE);
-            searchCircleBox.getStyleClass().remove(CIRCLE_STYLE);
-            waitingLabel.getStyleClass().remove(LABEL_STYLE);
-            followLabel.getStyleClass().remove(LABEL_STYLE);
-            searchLabel.getStyleClass().remove(LABEL_STYLE);
-
+            removeStateHighlightBox();
             switch (newValue){
                 case WAITING_TO_BE_LEVEL:
                     waitingCircleBox.getStyleClass().add(CIRCLE_STYLE);
@@ -177,27 +151,23 @@ public class SearchForLightTask {
                 showProgramEnded();
             }
         });
+    }
 
-        rawSelected.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
-                leftLight.textProperty().setValue(FinchLiveData.getCurrLeftLightStats().getRaw() + "");
-                leftWheel.textProperty().setValue(FinchLiveData.getCurrLeftVelStats().getRaw() + "");
-                rightLight.textProperty().setValue(FinchLiveData.getCurrRightLightStats().getRaw() + "");
-                rightWheel.textProperty().setValue(FinchLiveData.getCurrRightVelStats().getRaw() + "");
-            } else {
-                leftLight.textProperty().setValue(FinchLiveData.getCurrLeftLightStats().getPercentage() + "%");
-                leftWheel.textProperty().setValue(FinchLiveData.getCurrLeftVelStats().getPercentage() + "%");
-                rightLight.textProperty().setValue(FinchLiveData.getCurrRightLightStats().getPercentage() + "%");
-                rightWheel.textProperty().setValue(FinchLiveData.getCurrRightVelStats().getPercentage() + "%");
-            }
-        });
+    @FXML
+    private void removeStateHighlightBox() {
+        waitingCircleBox.getStyleClass().remove(CIRCLE_STYLE);
+        followCircleBox.getStyleClass().remove(CIRCLE_STYLE);
+        searchCircleBox.getStyleClass().remove(CIRCLE_STYLE);
+        waitingLabel.getStyleClass().remove(LABEL_STYLE);
+        followLabel.getStyleClass().remove(LABEL_STYLE);
+        searchLabel.getStyleClass().remove(LABEL_STYLE);
     }
 
     private void updateVals(Label label, ProgressBar progressBar, RawAndPecentage newValue) {
         if (rawSelected.isSelected()) {
             label.textProperty().setValue(newValue.getRaw()+"");
         } else {
-            label.textProperty().setValue(newValue.getPercentage()+"%");
+            label.textProperty().setValue(newValue.getPosNegPercentage()+"%");
         }
         progressBar.setProgress((double)newValue.getPercentage()/100);
     }
@@ -217,16 +187,38 @@ public class SearchForLightTask {
     private void showProgramEnded() {
         startBtn.setVisible(true);
         stopBtn.setVisible(false);
+        resetLiveData();
 
         if (showTelemetry.isSelected()) {
             ViewManager.showFinalTelemetry();
         }
     }
 
+    private void resetLiveData() {
+        removeStateHighlightBox();
+        setValsToDefault();
+    }
 
+    private void setValsToDefault() {
+        unbindData();
 
+        timeElapsed.setText("0m 0s");
+        leftLight.setText("-1");
+        rightLight.setText("-1");
+        leftWheel.setText("-1");
+        rightWheel.setText("-1");
+        rightLightBar.setProgress(-1);
+        leftLightBar.setProgress(-1);
+        rightWheelBar.setProgress(-1);
+        leftWheelBar.setProgress(-1);
+    }
 
-    //need to implement finch state & telemetry.
-
+    private void unbindData() {
+        timeElapsed.textProperty().unbind();
+        leftLight.textProperty().unbind();
+        rightLight.textProperty().unbind();
+        leftWheel.textProperty().unbind();
+        rightWheel.textProperty().unbind();
+    }
 
 }

@@ -11,11 +11,11 @@ public class Launcher extends Application {
     public void start(Stage primaryStage) throws Exception{
         passFinchToSubroutines();
 //
-//        ViewManager.init(primaryStage);
-//        ViewManager.showMainMenu();
-
         ViewManager.init(primaryStage);
-        ViewManager.showSearchForLight();
+        ViewManager.showMainMenu();
+
+//        ViewManager.init(primaryStage);
+//        ViewManager.showSearchForLight();
     }
 
     private void passFinchToSubroutines() {

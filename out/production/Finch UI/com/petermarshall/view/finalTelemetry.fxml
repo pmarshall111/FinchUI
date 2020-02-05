@@ -17,8 +17,9 @@
 <ScrollPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.petermarshall.controller.FinalTelemetry"
-            prefHeight="400.0" prefWidth="600.0" vvalue="-Infinity">
+            prefHeight="400.0" prefWidth="600.0" vvalue="-Infinity" fitToWidth="true">
     <content>
+        <GridPane alignment="center">
         <VBox>
             <HBox alignment="CENTER" styleClass="titleContent">
                 <Label text="Final Stats" styleClass="bigTitle"/>
@@ -27,9 +28,8 @@
                 <Label text="About" styleClass="subtitle"/>
                 <Separator/>
                 <VBox styleClass="subContent">
-                    <Text wrappingWidth="550" styleClass="detail">Below are the aggregated stats from the most recent run of the Finch searching for a light. Note
-                    that you can keep this window open and compare the stats with a second run.</Text>
-                    <Text styleClass="detail">Additionally, any values requested as a key requirement are highlighted with a border.</Text>
+                    <Text wrappingWidth="750" styleClass="detail">Below are the aggregated stats from the most recent run of the Finch searching for a light. Note
+                    that you can keep this window open and compare the stats with a second run. Additionally, any values requested as a key requirement are highlighted with a border.</Text>
                 </VBox>
                 <Label text="General" styleClass="subtitle"/>
                 <Separator/>
@@ -105,6 +105,8 @@
                 </HBox>
             </VBox>
         </VBox>
+
+        </GridPane>
     </content>
 
     <stylesheets>
@@ -112,6 +114,6 @@
         <URL value="@css/separator.css"/>
         <URL value="@css/finalTelemetry.css"/>
         <URL value="@css/containerPadding.css"/>
-        <URL value="@css/backBtn.css"/>
+        <URL value="@css/closeBtn.css"/>
     </stylesheets>
 </ScrollPane>

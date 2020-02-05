@@ -99,7 +99,7 @@ public class FinalTelemetry {
         int leftMin = endData.getLowestLeftLight();
         int rightMin = endData.getLowestRightLight();
         int leftMax = endData.getHighestLeftLight();
-        int rightMax = endData.getHighestLeftLight();
+        int rightMax = endData.getHighestRightLight();
 
         highlightMaxVal(leftMax, rightMax);
         highlightMinVal(leftMin, rightMin);

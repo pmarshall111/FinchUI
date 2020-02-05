@@ -7,9 +7,10 @@
 <?import java.net.*?>
 <?import javafx.scene.shape.Rectangle?>
 <ScrollPane xmlns="http://javafx.com/javafx/8.0.172-ea"
-            xmlns:fx="http://javafx.com/fxml" fx:controller="com.petermarshall.controller.SearchForLightTask">
+            xmlns:fx="http://javafx.com/fxml" fx:controller="com.petermarshall.controller.SearchForLightTask" fitToWidth="true">
     <content>
-        <StackPane prefHeight="700.0" prefWidth="600.0">
+        <GridPane alignment="center">
+        <StackPane prefHeight="700.0" prefWidth="800.0">
             <VBox>
                 <HBox alignment="CENTER" styleClass="titleContent">
                     <Label styleClass="bigTitle" text="Task: "/>
@@ -19,22 +20,22 @@
                     <Label text="Get Started" styleClass="subtitle"/>
                     <Separator/>
                     <VBox styleClass="subContent">
-                        <Text wrappingWidth="550" styleClass="detail">
+                        <Text wrappingWidth="750" styleClass="detail">
                             The Finch will first wait to be level before beginning to search for light sources near
                             it's vicinity. It's clear when this starts as the
                             Finch's beak will turn yellow as it begins it's search. Once it encounters a light
                             source, it's beak will turn to red and the Finch will
                             attempt to follow the light.
                         </Text>
-                        <Text wrappingWidth="550" styleClass="detail">
+                        <Text wrappingWidth="750" styleClass="detail">
                             You can see what the Finch is up to in the Finch State
                             section of this page, as well as the Telemetry tab.
                         </Text>
-                        <Text wrappingWidth="550" styleClass="detail">
+                        <Text wrappingWidth="750" styleClass="detail">
                             Additionally, there is an option to view a final summary of the search once the activity
                             has been stopped. This can be achieved either by
                             picking the Finch up and placing it facing upwards, or by pressing the stop button
-                            above.
+                            below.
                         </Text>
                         <StackPane styleClass="btnContainer">
                             <Button fx:id="stopBtn" styleClass="startStopBtn" text="Stop" onMouseClicked="#endSearch"
@@ -50,13 +51,13 @@
                     <Separator/>
                     <VBox styleClass="subContent">
                         <Label text="Finch State" styleClass="miniTitle"/>
-                        <Text wrappingWidth="550" styleClass="detail">
+                        <Text wrappingWidth="750" styleClass="detail">
                             The Finch can be in 1 of 2 states; Searching for a Light, or Following a Light. It
                             can be seen which state the Finch is in
                             via the colour of it's beak, or from the lights below. Both display the same
                             information, so use whichever is most clear to you.
                         </Text>
-                        <GridPane styleClass="paddingBox" alignment="CENTER" vgap="10">
+                        <GridPane styleClass="topPaddingBox" alignment="CENTER" vgap="10">
                             <HBox fx:id="waitingCircleBox" styleClass="stateCircleContainer" GridPane.columnIndex="0" GridPane.rowIndex="0">
                                 <Circle fx:id="waitingCircle" radius="10"/>
                             </HBox>
@@ -76,12 +77,15 @@
                     </VBox>
                     <VBox styleClass="subContent">
                         <Label text="Live Readings" styleClass="miniTitle"/>
-                        <HBox alignment="CENTER">
+                        <Text wrappingWidth="750" styleClass="detail">
+                            While the program is running, these stats show the live readings from your Finch robot. It can be interesting to see how the wheel speed changes with the light levels - play around with it!
+                        </Text>
+                        <HBox alignment="CENTER" styleClass="paddingBox">
                             <Label text="Current run time: " styleClass="detail"/>
                             <Label fx:id="timeElapsed" text="0m 0s" styleClass="detail"/>
                         </HBox>
-                        <GridPane styleClass="paddingBox" alignment="CENTER" hgap="10" vgap="10">
-                            <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3"
+                        <GridPane alignment="CENTER" hgap="10" vgap="10">
+                            <HBox styleClass="smallBottomPadding" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3"
                                   alignment="CENTER">
                                 <fx:define>
                                     <ToggleGroup fx:id="group"/>
@@ -132,6 +136,7 @@
                         AnchorPane.bottomAnchor="12"/>
             </AnchorPane>
         </StackPane>
+        </GridPane>
     </content>
     <stylesheets>
         <URL value="@css/backBtn.css"/>
