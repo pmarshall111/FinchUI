@@ -1,7 +1,6 @@
 package com.petermarshall.controller;
 
-import com.petermarshall.LightInterfaceThread;
-import com.petermarshall.RawAndPecentage;
+import com.petermarshall.main.RawAndPecentage;
 import com.petermarshall.model.FinchLiveData;
 import com.petermarshall.view.ViewManager;
 import javafx.fxml.FXML;
@@ -77,8 +76,6 @@ public class SearchForLightTask {
     @FXML
     private Label followLabel;
 
-    private LightInterfaceThread programThread;
-
     private int NUM_DECIMAL_PLACES = 0;
 
     @FXML
@@ -97,9 +94,6 @@ public class SearchForLightTask {
         FinchLiveData.startProgram(100); //default val of 1s update time.
         bindData();
         setInitialVals();
-
-//        programThread = new LightInterfaceThread();
-//        programThread.start();
     }
 
     private void setInitialVals() {

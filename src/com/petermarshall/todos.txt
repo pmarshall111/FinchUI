@@ -35,3 +35,4 @@ Need to be done after
 - Look into changing the colour of the percentage bar based on what the value is.
 
 Check into resizing the Text wrapping width to match the size of the window.
+Also need to make sure that new windows are made to the same size as the current window.

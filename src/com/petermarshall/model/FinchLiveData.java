@@ -1,21 +1,24 @@
 package com.petermarshall.model;
 
 import com.petermarshall.*;
+import com.petermarshall.main.FinchState;
+import com.petermarshall.main.LightInterfaceThread;
+import com.petermarshall.main.RawAndPecentage;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public abstract class FinchLiveData { //TODO decide if we can simplify this file by extending from LightInterfaceThread. Can do this and not worry about extending thread because we've made the class abstract so it can't be instantiated and thus run
-    static SimpleBooleanProperty collectLiveData;
-    static int updateSpeed;
+    private static SimpleBooleanProperty collectLiveData;
+    private static int updateSpeed;
 
-    static SimpleStringProperty timeElapsed;
-    static SimpleObjectProperty<FinchState> currentState;
-    static SimpleObjectProperty<RawAndPecentage> currLeftVelStats;
-    static SimpleObjectProperty<RawAndPecentage> currRightVelStats;
-    static SimpleObjectProperty<RawAndPecentage> currLeftLightStats;
-    static SimpleObjectProperty<RawAndPecentage> currRightLightStats;
+    private static SimpleStringProperty timeElapsed;
+    private static SimpleObjectProperty<FinchState> currentState;
+    private static SimpleObjectProperty<RawAndPecentage> currLeftVelStats;
+    private static SimpleObjectProperty<RawAndPecentage> currRightVelStats;
+    private static SimpleObjectProperty<RawAndPecentage> currLeftLightStats;
+    private static SimpleObjectProperty<RawAndPecentage> currRightLightStats;
     private static LightInterfaceThread searchForLightThread;
 
     public static void startProgram(int speed) {
@@ -26,27 +29,19 @@ public abstract class FinchLiveData { //TODO decide if we can simplify this file
         Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
     }
 
-    public static void changeUpdateSpeed(int speedInMs) {
-        if (speedInMs > 0 && speedInMs < 5000) {
-            updateSpeed = speedInMs;
-        }
-    }
-
     private static void startDataRetrievalInNewThread() {
         //made in a new thread so we keep program and UI as separate as possible. Don't want to rigidly build the program for this UI
         //when things can change in the future.
         //UI needs it's own thread. Program needs own thread. Data retrieval to bridge between the 2.
 
-        //NOTE: DataRetrievalThread relies heavily on this file. Many variables with no access identifier are used in DataRetrievalThread
+        //NOTE: DataRetrievalThread is highly coupled to this file
         DataRetrievalThread t = new DataRetrievalThread();
         t.start();
-        t.setPriority(Thread.MIN_PRIORITY); //TODO: perhaps these priority vals should all be set together so it's clear what we're doing.
     }
 
     private static void startProgramInNewThread() {
-        searchForLightThread = new LightInterfaceThread();
+        searchForLightThread = new LightInterfaceThread(Launcher.initialisedFinch);
         searchForLightThread.start();
-        searchForLightThread.setPriority(Thread.MAX_PRIORITY); //so our Finch is as responsive as possible. Without this line, we're getting periods of up to 2.5s of no thread time.
     }
     
     private static void initVariables() {
@@ -98,27 +93,15 @@ public abstract class FinchLiveData { //TODO decide if we can simplify this file
         return currRightLightStats;
     }
 
-    public static String getTimeElapsed() {
-        return timeElapsed.get();
+    static LightInterfaceThread getSearchForLightThread() {
+        return searchForLightThread;
     }
 
-    public static FinchState getCurrentState() {
-        return currentState.get();
+    public static boolean isCollectingLiveData() {
+        return collectLiveData.get();
     }
 
-    public static RawAndPecentage getCurrLeftVelStats() {
-        return currLeftVelStats.get();
-    }
-
-    public static RawAndPecentage getCurrRightVelStats() {
-        return currRightVelStats.get();
-    }
-
-    public static RawAndPecentage getCurrLeftLightStats() {
-        return currLeftLightStats.get();
-    }
-
-    public static RawAndPecentage getCurrRightLightStats() {
-        return currRightLightStats.get();
+    public static int getUpdateSpeed() {
+        return updateSpeed;
     }
 }

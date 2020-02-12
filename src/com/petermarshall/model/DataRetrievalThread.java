@@ -1,18 +1,16 @@
 package com.petermarshall.model;
 
-import com.petermarshall.LightInterfaceThread;
+import com.petermarshall.main.LightInterfaceThread;
 import com.petermarshall.model.helpers.TimeFormat;
 import javafx.application.Platform;
 
-//Class relies heavily on variables in FinchLiveData. Variables changed there affect this class.
-//However, this class is only designed for use with that class. Originally part of FinchLiveData, this class was made to make the class shorter
-//TODO: is this the best way of doing things???
+//Class's sole purpose is to update values in FinchLiveData.
 import static com.petermarshall.model.FinchLiveData.*;
 
 public class DataRetrievalThread extends Thread {
     @Override
     public void run() {
-        while (collectLiveData.get()) {
+        while (FinchLiveData.isCollectingLiveData()) {
             //thinking that we may only need this thread to start the program.
             //would need access to the Finch. Pretty easy though as we just initialise the new Finch.
             //This model would need to be passed into the controller, which could then control a flag to stop or start the program.
@@ -24,7 +22,7 @@ public class DataRetrievalThread extends Thread {
             setTime();
 
             try {
-                Thread.sleep(updateSpeed);
+                Thread.sleep(FinchLiveData.getUpdateSpeed());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -35,10 +33,10 @@ public class DataRetrievalThread extends Thread {
 
     private void checkFinchIsStillRunning() {
         //User can stop the program by placing the Finch upwards. So we need to update the flag from both the UI and the program.
-        if (!LightInterfaceThread.isRunning()) {
+        if (!FinchLiveData.getSearchForLightThread().isRunning()) {
             Platform.runLater(() -> {
                 try {
-                    collectLiveData.setValue(false);
+                    FinchLiveData.collectLiveDataProperty().setValue(false);
                 } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                     e.printStackTrace();
                 }
@@ -49,7 +47,7 @@ public class DataRetrievalThread extends Thread {
     private void setState() {
         Platform.runLater(() -> {
             try {
-                currentState.set(LightInterfaceThread.getCurrentFinchState());
+                FinchLiveData.currentStateProperty().set(FinchLiveData.getSearchForLightThread().getCurrentFinchState());
             } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 //do nothing. Means we've tried to get state before there are any records
             }
@@ -59,7 +57,7 @@ public class DataRetrievalThread extends Thread {
     private void setLeftVel() {
         Platform.runLater(() -> {
             try {
-                currLeftVelStats.set(LightInterfaceThread.getLatestLeftVelStats());
+                FinchLiveData.currLeftVelStatsProperty().set(FinchLiveData.getSearchForLightThread().getLatestLeftVelStats());
             } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 //do nothing. Means we've tried to get state before there are any records
             }
@@ -69,7 +67,7 @@ public class DataRetrievalThread extends Thread {
     private void setRightVel() {
         Platform.runLater(() -> {
             try {
-                currRightVelStats.set(LightInterfaceThread.getLatestRightVelStats());
+                FinchLiveData.currRightVelStatsProperty().set(FinchLiveData.getSearchForLightThread().getLatestRightVelStats());
             } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();
             }
@@ -79,7 +77,7 @@ public class DataRetrievalThread extends Thread {
     private void setLeftLight() {
         Platform.runLater(() -> {
             try {
-                currLeftLightStats.set(LightInterfaceThread.getLatestLeftLightStats());
+                FinchLiveData.currLeftLightStatsProperty().set(FinchLiveData.getSearchForLightThread().getLatestLeftLightStats());
             } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();
             }
@@ -89,7 +87,7 @@ public class DataRetrievalThread extends Thread {
     private void setRightLight() {
         Platform.runLater(() -> {
             try {
-                currRightLightStats.set(LightInterfaceThread.getLatestRightLightStats());
+                FinchLiveData.currRightLightStatsProperty().set(FinchLiveData.getSearchForLightThread().getLatestRightLightStats());
             } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();
             }
@@ -99,8 +97,8 @@ public class DataRetrievalThread extends Thread {
     private void setTime() {
         Platform.runLater(() -> {
             try {
-                timeElapsed.set(
-                        TimeFormat.getMinsSecsFromNanoSecs(LightInterfaceThread.getTimeElapsedInNS())
+                FinchLiveData.timeElapsedInNsProperty().set(
+                        TimeFormat.getMinsSecsFromNanoSecs(FinchLiveData.getSearchForLightThread().getTimeElapsedInNS())
                 );
             } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();

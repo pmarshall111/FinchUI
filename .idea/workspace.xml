@@ -3,30 +3,36 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Finch UI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Finch UI.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finch.log" beforeDir="false" afterPath="$PROJECT_DIR$/finch.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hs_err_pid18056.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/FinchState.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/Launcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/SearchForLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/SearchForLight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/LightInterfaceThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/RawAndPecentage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/SearchForLight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/SpeedLightStats.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/TimeInStates$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/TimeInStates.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/FinalTelemetry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/FinalTelemetry.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/SearchForLightTask$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/SearchForLightTask$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/SearchForLightTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/SearchForLightTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/DataRetrievalThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/DataRetrievalThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/FinchLiveData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/FinchLiveData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/pseudoCode.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/pseudoCode.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/ViewManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/ViewManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/css/backBtn.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/css/backBtn.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/finalTelemetry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/finalTelemetry.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/mainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/searchForLightTask.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/searchForLightTask.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/SummaryData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/SummaryData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/notes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/pseudoCode.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/controller/Controller.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/controller/FinalTelemetry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/controller/FinalTelemetry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/controller/SearchForLightTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/controller/SearchForLightTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/model/DataRetrievalThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/model/DataRetrievalThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/model/FinchLiveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/model/FinchLiveData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/model/SummaryData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/model/SummaryData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/todos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/todos.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/ViewManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/view/ViewManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/css/containerPadding.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/view/css/containerPadding.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/css/searchForLightTask.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/view/css/searchForLightTask.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/finalTelemetry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/view/finalTelemetry.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/mainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/view/mainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/searchForLightTask.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/view/searchForLightTask.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/sample.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +112,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -113,13 +120,16 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579369702605" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/petermarshall/view/icons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Finch-SearchForLight/src" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -275,6 +285,8 @@
       <workItem from="1580577402019" duration="4095000" />
       <workItem from="1580903584329" duration="24000" />
       <workItem from="1580903950109" duration="7332000" />
+      <workItem from="1580927751535" duration="14000" />
+      <workItem from="1580985523552" duration="15282000" />
     </task>
     <servers />
   </component>
@@ -286,40 +298,56 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="198" key="GridCell.Tab.0.bottom" timestamp="1580910577574">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="442" y="211" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1581073295014">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="442" y="211" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1366.728@0.0.1366.728" timestamp="1581073295014" />
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser" timestamp="1580990024384">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580990024384" />
+    <state x="71" y="118" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581091455608">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="71" y="118" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1581091455608" />
+    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1580990802421">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="262" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580990802421" />
+    <state width="1320" height="198" key="GridCell.Tab.0.bottom" timestamp="1581494177936">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="198" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1580586814704" />
     <state width="1237" height="291" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1580579846271" />
-    <state width="1323" height="199" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1580215556367" />
-    <state width="1877" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580732030889" />
+    <state width="1320" height="198" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581078316267" />
+    <state width="1320" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581494177936" />
     <state width="1877" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580910577574" />
     <state width="1877" height="199" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580064118193" />
-    <state width="1877" height="198" key="GridCell.Tab.0.center" timestamp="1580910577572">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1320" height="198" key="GridCell.Tab.0.center" timestamp="1581494177900">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="198" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1580586814702" />
     <state width="1237" height="291" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1580579846270" />
-    <state width="1323" height="199" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1580215556365" />
-    <state width="1877" height="198" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580732030885" />
+    <state width="1320" height="198" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581078316265" />
+    <state width="1320" height="198" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581494177900" />
     <state width="1877" height="198" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580910577572" />
     <state width="1877" height="199" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580064118192" />
-    <state width="1877" height="198" key="GridCell.Tab.0.left" timestamp="1580910577571">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1320" height="198" key="GridCell.Tab.0.left" timestamp="1581494177783">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="198" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1580586814702" />
     <state width="1237" height="291" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1580579846267" />
-    <state width="1323" height="199" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1580215556363" />
-    <state width="1877" height="198" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580732030883" />
+    <state width="1320" height="198" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581078316265" />
+    <state width="1320" height="198" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581494177783" />
     <state width="1877" height="198" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580910577571" />
     <state width="1877" height="199" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580064118191" />
-    <state width="1877" height="198" key="GridCell.Tab.0.right" timestamp="1580910577573">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1320" height="198" key="GridCell.Tab.0.right" timestamp="1581494177902">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1323" height="198" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1580586814703" />
     <state width="1237" height="291" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1580579846270" />
-    <state width="1323" height="199" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1580215556366" />
-    <state width="1877" height="198" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580732030887" />
+    <state width="1320" height="198" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581078316266" />
+    <state width="1320" height="198" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581494177902" />
     <state width="1877" height="198" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580910577573" />
     <state width="1877" height="199" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580064118193" />
     <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1580568925007">
@@ -338,27 +366,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580568924944" />
-    <state x="2360" y="95" key="SettingsEditor" timestamp="1580053445263">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="440" y="95" key="SettingsEditor" timestamp="1580990959641">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="440" y="95" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580990959641" />
     <state x="2360" y="95" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580053445263" />
-    <state x="2576" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1580904100366">
+    <state x="2576" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1580927751637">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="467" y="242" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580579150900" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580142806167" />
-    <state x="2576" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580904100366" />
+    <state x="2576" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580927751636" />
+    <state x="664" y="422" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1580990989866">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="664" y="422" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580990989866" />
+    <state x="771" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580991763115">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="771" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580991763115" />
     <state x="2116" y="55" width="1465" height="798" maximized="true" key="dock-window-1" timestamp="1580145692248">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2116" y="55" width="1465" height="798" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580145692248" />
-    <state x="342" y="147" key="new project wizard" timestamp="1580732021401">
+    <state x="131" y="103" key="new project wizard" timestamp="1581091271554">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="131" y="103" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1581091271554" />
+    <state x="342" y="147" key="new project wizard/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580732021401" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580992679225">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="342" y="147" key="new project wizard/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580732021401" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1580299993217">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580992679225" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580299993217" />
   </component>
   <component name="antWorkspaceConfiguration">

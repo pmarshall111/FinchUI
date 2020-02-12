@@ -1,7 +1,7 @@
 package com.petermarshall.controller;
 
-import com.petermarshall.SpeedLightStats;
-import com.petermarshall.TimeInStates;
+import com.petermarshall.main.SpeedLightStats;
+import com.petermarshall.main.TimeInStates;
 import com.petermarshall.model.FinchLiveData;
 import com.petermarshall.model.SummaryData;
 import com.petermarshall.model.helpers.DoubleFormat;

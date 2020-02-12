@@ -6,26 +6,14 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class Launcher extends Application {
+    public static Finch initialisedFinch;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        passFinchToSubroutines();
-//
+        initialisedFinch = new Finch();
         ViewManager.init(primaryStage);
         ViewManager.showMainMenu();
-
-//        ViewManager.init(primaryStage);
-//        ViewManager.showSearchForLight();
     }
-
-    private void passFinchToSubroutines() {
-        Finch sharedFinch = new Finch();
-
-        LightInterfaceThread.init(sharedFinch);
-    }
-
-
-
 
     public static void main(String[] args) {
         launch(args);

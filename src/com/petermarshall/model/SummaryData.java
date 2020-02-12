@@ -1,13 +1,12 @@
 package com.petermarshall.model;
 
-import com.petermarshall.LightInterfaceThread;
-import com.petermarshall.SpeedLightStats;
-import com.petermarshall.TimeInStates;
+import com.petermarshall.main.LightInterfaceThread;
+import com.petermarshall.main.SpeedLightStats;
+import com.petermarshall.main.TimeInStates;
 
 import java.util.ArrayList;
 
-//thinking behind making this an instanciable class is that the live data can only have 1 thing, but there can be many runs and therefore many summaries.
-//... not that it matters too much.
+//class is created at the end of a run to contain all wanted averages
 public class SummaryData {
     private int leftLightAtStart;
     private int rightLightAtStart;
@@ -23,18 +22,20 @@ public class SummaryData {
     private ArrayList<SpeedLightStats> allStats;
 
     public SummaryData() {
-        leftLightAtStart = LightInterfaceThread.getLeftLightAtStart();
-        rightLightAtStart = LightInterfaceThread.getRightLightAtStart();
-        highestLeftLight = LightInterfaceThread.getHighestLeftLightReading();
-        highestRightLight = LightInterfaceThread.getHighestRightLightReading();
-        lowestLeftLight = LightInterfaceThread.getLowestLeftLightReading();
-        lowestRightLight = LightInterfaceThread.getLowestRightLightReading();
-        avgLeftLight = LightInterfaceThread.getAverageLeftLightSensorReading();
-        avgRightLight = LightInterfaceThread.getAverageRightLightSensorReading();
-        avgOvrLight = LightInterfaceThread.getAverageLightSensorReading();
-        numbLightDetections = LightInterfaceThread.getNumbLightDetections();
-        timeInStates = LightInterfaceThread.getTimeInEachState();
-        allStats = LightInterfaceThread.getStats();
+        LightInterfaceThread lightTask = FinchLiveData.getSearchForLightThread();
+
+        leftLightAtStart = lightTask.getLeftLightAtStart();
+        rightLightAtStart = lightTask.getRightLightAtStart();
+        highestLeftLight = lightTask.getHighestLeftLightReading();
+        highestRightLight = lightTask.getHighestRightLightReading();
+        lowestLeftLight = lightTask.getLowestLeftLightReading();
+        lowestRightLight = lightTask.getLowestRightLightReading();
+        avgLeftLight = lightTask.getAverageLeftLightSensorReading();
+        avgRightLight = lightTask.getAverageRightLightSensorReading();
+        avgOvrLight = lightTask.getAverageLightSensorReading();
+        numbLightDetections = lightTask.getNumbLightDetections();
+        timeInStates = lightTask.getTimeInEachState();
+        allStats = lightTask.getStats();
     }
 
     public ArrayList<SpeedLightStats> getAllStats() {
