@@ -6,7 +6,7 @@ import com.petermarshall.main.TimeInStates;
 
 import java.util.ArrayList;
 
-//class is created at the end of a run to contain all wanted averages
+//Class is created at the end of a run to contain all wanted pieces of data.
 public class SummaryData {
     private int leftLightAtStart;
     private int rightLightAtStart;

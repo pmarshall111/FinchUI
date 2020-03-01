@@ -18,8 +18,8 @@ import javafx.scene.layout.HBox;
 
 import java.util.ArrayList;
 
+//The controller for view/finalTelemetry.fxml
 public class FinalTelemetry {
-
     @FXML
     private Label runNumber;
     @FXML
@@ -56,8 +56,6 @@ public class FinalTelemetry {
     private PieChart stateTimePie;
     @FXML
     private LineChart<Double, Integer> lightGraph;
-    @FXML
-    private Button closeBtn;
 
     private SummaryData endData;
     private final String highlightedVal = "highlightedVal";
@@ -76,7 +74,6 @@ public class FinalTelemetry {
     private void setVals() {
         endData = new SummaryData();
         final int DECIMAL_PLACES = 1;
-
         runNumber.setText(ViewManager.getNumbSearchPopups()+"");
         runTime.setText(FinchLiveData.timeElapsedInNsProperty().get());
         newLightDetections.setText(endData.getNumbLightDetections()+"");
@@ -100,7 +97,6 @@ public class FinalTelemetry {
         int rightMin = endData.getLowestRightLight();
         int leftMax = endData.getHighestLeftLight();
         int rightMax = endData.getHighestRightLight();
-
         highlightMaxVal(leftMax, rightMax);
         highlightMinVal(leftMin, rightMin);
     }
@@ -123,9 +119,7 @@ public class FinalTelemetry {
 
     private void setPieChart() {
         TimeInStates time = endData.getTimeInStates();
-
         long totalTime = time.getTotalRecordedTime();
-
         //order of these statements is important for matching css colours to Finch beak colours.
         stateTimePie.getData().add(new PieChart.Data("Waiting to be level", time.getWaitingTime()));
         stateTimePie.getData().add(new PieChart.Data("Searching", time.getSearchingTime()));
@@ -137,7 +131,6 @@ public class FinalTelemetry {
         stateTimePie.getData().forEach(pieSection -> {
             long timeNs = (long) pieSection.getPieValue();
             double percentage = 100 * pieSection.getPieValue() / totalTime;
-
             Tooltip tooltip = new Tooltip();
             String textToDisplay = pieSection.getName() + "\n" +
                                     "Time:       " + TimeFormat.getMinsSecsFromNanoSecs(timeNs) + "\n" +
@@ -148,7 +141,6 @@ public class FinalTelemetry {
     }
 
     private void setLineChart() {
-        //TODO: can potentially create a new class for this sequence? Then we just call new LightChart(linechart, data).generateChart()
         ArrayList<SpeedLightStats> allStats = endData.getAllStats();
         XYChart.Series<Double, Integer> leftLight = new XYChart.Series<>();
         XYChart.Series<Double, Integer> rightLight = new XYChart.Series<>();

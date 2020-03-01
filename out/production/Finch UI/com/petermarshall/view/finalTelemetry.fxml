@@ -28,7 +28,7 @@
                 <Label text="About" styleClass="subtitle"/>
                 <Separator/>
                 <VBox styleClass="subContent">
-                    <Text wrappingWidth="750" styleClass="detail">Below are the aggregated stats from the most recent run of the Finch searching for a light. Note
+                    <Text wrappingWidth="650" styleClass="detail">Below are the aggregated stats from the most recent run of the Finch searching for a light. Note
                     that you can keep this window open and compare the stats with a second run. Additionally, any values requested as a key requirement are highlighted with a border.</Text>
                 </VBox>
                 <Label text="General" styleClass="subtitle"/>

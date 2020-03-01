@@ -2,37 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Finch UI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Finch UI.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finch.log" beforeDir="false" afterPath="$PROJECT_DIR$/finch.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hs_err_pid18056.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/FinchState.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/Launcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/LightInterfaceThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/RawAndPecentage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/SearchForLight.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/SpeedLightStats.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/TimeInStates$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/TimeInStates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/Controller.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/FinalTelemetry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/FinalTelemetry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/MainMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/SearchForLightTask$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/SearchForLightTask$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/SearchForLightTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/SearchForLightTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/FinchLimits.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/FinchLimits.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/FinchState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/FinchState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/LightInterfaceThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/LightInterfaceThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/SearchForLight.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/SearchForLight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/SpeedLightStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/main/SpeedLightStats.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/DataRetrievalThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/DataRetrievalThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/FinchLiveData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/FinchLiveData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/SummaryData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/SummaryData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/notes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/pseudoCode.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/helpers/DoubleFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/helpers/DoubleFormat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/helpers/TimeFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/model/helpers/TimeFormat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/test/LightInterfaceThreadTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/test/LightInterfaceThreadTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/test/RawAndPercentageTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/test/RawAndPercentageTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/todos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/todos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/ViewManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/ViewManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/view/sample.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/controller/Controller.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/controller/FinalTelemetry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/controller/FinalTelemetry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/controller/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/controller/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/controller/SearchForLightTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/controller/SearchForLightTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/model/DataRetrievalThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/model/DataRetrievalThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/model/FinchLiveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/model/FinchLiveData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/model/SummaryData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/model/SummaryData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/todos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/todos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/model/helpers/DoubleFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/model/helpers/DoubleFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/model/helpers/TimeFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/model/helpers/TimeFormat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/ViewManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/view/ViewManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/finalTelemetry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/view/finalTelemetry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/petermarshall/view/searchForLightTask.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/petermarshall/view/searchForLightTask.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,26 +132,27 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579369702605" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Finch-SearchForLight/src" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/javafx_sdk/javafx-sdk-11.0.2/lib" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Peter\eclipse-workspace\Finch UI\src\com\petermarshall\view\icons" />
-      <recent name="C:\Users\Peter\eclipse-workspace\Finch UI\src\com\petermarshall\icons" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Peter\eclipse-workspace\Finch UI\src\com\petermarshall\fxml" />
       <recent name="C:\Users\Peter\eclipse-workspace\Finch UI\src\com\petermarshall\controllers" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Peter\eclipse-workspace\Finch UI\src\com\petermarshall\view\icons" />
+      <recent name="C:\Users\Peter\eclipse-workspace\Finch UI\src\com\petermarshall\icons" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="JUnit.com.petermarshall.test in Finch UI">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -164,20 +171,6 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.petermarshall.Launcher" />
-      <module name="Finch UI" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.petermarshall.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="Finch UI" />
@@ -194,28 +187,111 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestLightBrightness" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.petermarshall.TestLightBrightness" />
-      <module name="Finch UI" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.petermarshall.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LightInterfaceThreadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Finch UI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.petermarshall.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.petermarshall.test" />
+      <option name="MAIN_CLASS_NAME" value="com.petermarshall.test.LightInterfaceThreadTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LightInterfaceThreadTest.canGetAvgOvrReading" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Finch UI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.petermarshall.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.petermarshall.test" />
+      <option name="MAIN_CLASS_NAME" value="com.petermarshall.test.LightInterfaceThreadTest" />
+      <option name="METHOD_NAME" value="canGetAvgOvrReading" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LightInterfaceThreadTest.canGetTimeInEachState" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Finch UI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.petermarshall.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.petermarshall.test" />
+      <option name="MAIN_CLASS_NAME" value="com.petermarshall.test.LightInterfaceThreadTest" />
+      <option name="METHOD_NAME" value="canGetTimeInEachState" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LightInterfaceThreadTest.canStartProgram" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Finch UI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.petermarshall.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.petermarshall.test" />
+      <option name="MAIN_CLASS_NAME" value="com.petermarshall.test.LightInterfaceThreadTest" />
+      <option name="METHOD_NAME" value="canStartProgram" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.petermarshall.test in Finch UI" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Finch UI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.petermarshall.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.petermarshall.test" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="moduleWithDependencies" />
@@ -247,13 +323,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Launcher" />
-      <item itemvalue="Application.TestLightBrightness" />
+      <item itemvalue="JUnit.LightInterfaceThreadTest.canGetAvgOvrReading" />
+      <item itemvalue="JUnit.LightInterfaceThreadTest" />
+      <item itemvalue="JUnit.LightInterfaceThreadTest.canStartProgram" />
+      <item itemvalue="JUnit.com.petermarshall.test in Finch UI" />
+      <item itemvalue="JUnit.LightInterfaceThreadTest.canGetTimeInEachState" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Launcher" />
-        <item itemvalue="Application.TestLightBrightness" />
+        <item itemvalue="JUnit.com.petermarshall.test in Finch UI" />
+        <item itemvalue="JUnit.LightInterfaceThreadTest" />
+        <item itemvalue="JUnit.LightInterfaceThreadTest.canGetTimeInEachState" />
+        <item itemvalue="JUnit.LightInterfaceThreadTest.canStartProgram" />
+        <item itemvalue="JUnit.LightInterfaceThreadTest.canGetAvgOvrReading" />
       </list>
     </recent_temporary>
   </component>
@@ -287,6 +369,7 @@
       <workItem from="1580903950109" duration="7332000" />
       <workItem from="1580927751535" duration="14000" />
       <workItem from="1580985523552" duration="15282000" />
+      <workItem from="1582965530156" duration="29433000" />
     </task>
     <servers />
   </component>
@@ -298,6 +381,10 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1274" y="92" width="1182" height="544" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1583096798927">
+      <screen x="-1366" y="0" width="1366" height="728" />
+    </state>
+    <state x="-1274" y="92" width="1182" height="544" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583096798927" />
     <state x="442" y="211" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1581073295014">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -306,69 +393,92 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="228" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580990024384" />
+    <state x="-832" y="256" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582999535901">
+      <screen x="-1366" y="0" width="1366" height="728" />
+    </state>
+    <state x="-832" y="256" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/-1366.0.1366.728/0.0.1360.728@-1366.0.1366.728" timestamp="1582965770344" />
+    <state x="-832" y="256" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1582999535901" />
+    <state x="-703" y="67" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1583000327956">
+      <screen x="-1366" y="0" width="1366" height="728" />
+    </state>
+    <state x="-703" y="67" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583000327956" />
+    <state x="354" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583004598035">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="354" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583004598035" />
     <state x="71" y="118" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581091455608">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="71" y="118" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1581091455608" />
-    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1580990802421">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1166" y="182" key="FileChooserDialogImpl" timestamp="1583088372276">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state x="-1166" y="182" key="FileChooserDialogImpl/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583088372276" />
     <state x="740" y="262" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580990802421" />
-    <state width="1320" height="198" key="GridCell.Tab.0.bottom" timestamp="1581494177936">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="196" key="GridCell.Tab.0.bottom" timestamp="1583100256464">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="196" key="GridCell.Tab.0.bottom/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583100256464" />
     <state width="1323" height="198" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1580586814704" />
     <state width="1237" height="291" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1580579846271" />
     <state width="1320" height="198" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1581078316267" />
     <state width="1320" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581494177936" />
     <state width="1877" height="198" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580910577574" />
     <state width="1877" height="199" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580064118193" />
-    <state width="1320" height="198" key="GridCell.Tab.0.center" timestamp="1581494177900">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="196" key="GridCell.Tab.0.center" timestamp="1583100256464">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="196" key="GridCell.Tab.0.center/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583100256464" />
     <state width="1323" height="198" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1580586814702" />
     <state width="1237" height="291" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1580579846270" />
     <state width="1320" height="198" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1581078316265" />
     <state width="1320" height="198" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581494177900" />
     <state width="1877" height="198" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580910577572" />
     <state width="1877" height="199" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580064118192" />
-    <state width="1320" height="198" key="GridCell.Tab.0.left" timestamp="1581494177783">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="196" key="GridCell.Tab.0.left" timestamp="1583100256464">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="196" key="GridCell.Tab.0.left/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583100256464" />
     <state width="1323" height="198" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1580586814702" />
     <state width="1237" height="291" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1580579846267" />
     <state width="1320" height="198" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1581078316265" />
     <state width="1320" height="198" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581494177783" />
     <state width="1877" height="198" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580910577571" />
     <state width="1877" height="199" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580064118191" />
-    <state width="1320" height="198" key="GridCell.Tab.0.right" timestamp="1581494177902">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="196" key="GridCell.Tab.0.right" timestamp="1583100256464">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="196" key="GridCell.Tab.0.right/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583100256464" />
     <state width="1323" height="198" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.984@0.0.1366.728" timestamp="1580586814703" />
     <state width="1237" height="291" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1280.984@1366.0.1280.984" timestamp="1580579846270" />
     <state width="1320" height="198" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1581078316266" />
     <state width="1320" height="198" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581494177902" />
     <state width="1877" height="198" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580910577573" />
     <state width="1877" height="199" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580064118193" />
-    <state width="1877" height="347" key="GridCell.Tab.1.bottom" timestamp="1580568925007">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="222" key="GridCell.Tab.1.bottom" timestamp="1583099817069">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="222" key="GridCell.Tab.1.bottom/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583099817069" />
     <state width="1877" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580568925007" />
-    <state width="1877" height="347" key="GridCell.Tab.1.center" timestamp="1580568924942">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="222" key="GridCell.Tab.1.center" timestamp="1583099817069">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="222" key="GridCell.Tab.1.center/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583099817069" />
     <state width="1877" height="347" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580568924942" />
-    <state width="1877" height="347" key="GridCell.Tab.1.left" timestamp="1580568924884">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="222" key="GridCell.Tab.1.left" timestamp="1583099817069">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="222" key="GridCell.Tab.1.left/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583099817069" />
     <state width="1877" height="347" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580568924884" />
-    <state width="1877" height="347" key="GridCell.Tab.1.right" timestamp="1580568924944">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="222" key="GridCell.Tab.1.right" timestamp="1583099817069">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="222" key="GridCell.Tab.1.right/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583099817069" />
     <state width="1877" height="347" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580568924944" />
-    <state x="440" y="95" key="SettingsEditor" timestamp="1580990959641">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1053" y="0" key="SettingsEditor" timestamp="1583088383517">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state x="-1053" y="0" key="SettingsEditor/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1583088383517" />
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580990959641" />
     <state x="2360" y="95" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580053445263" />
     <state x="2576" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1580927751637">
@@ -385,9 +495,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="771" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580991763115" />
-    <state x="2116" y="55" width="1465" height="798" maximized="true" key="dock-window-1" timestamp="1580145692248">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="-912" y="104" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1582972151406">
+      <screen x="-1366" y="0" width="1366" height="728" />
     </state>
+    <state x="-912" y="104" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1582972151406" />
+    <state x="0" y="0" width="1161" height="755" maximized="true" key="dock-window-1" timestamp="1582966141371">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="0" y="0" width="1161" height="755" maximized="true" key="dock-window-1/0.0.1360.728/-1366.0.1366.728@-1366.0.1366.728" timestamp="1582966141371" />
     <state x="2116" y="55" width="1465" height="798" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580145692248" />
     <state x="131" y="103" key="new project wizard" timestamp="1581091271554">
       <screen x="0" y="0" width="1366" height="728" />

@@ -4,15 +4,17 @@ import com.petermarshall.*;
 import com.petermarshall.main.FinchState;
 import com.petermarshall.main.LightInterfaceThread;
 import com.petermarshall.main.RawAndPecentage;
-import javafx.application.Platform;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public abstract class FinchLiveData { //TODO decide if we can simplify this file by extending from LightInterfaceThread. Can do this and not worry about extending thread because we've made the class abstract so it can't be instantiated and thus run
+//This is the interface class that the controller can call to communicate with the task interface. Class creates 2 threads.
+//The DataRetrieval thread checks for changed values, as the current thread is needed by the GUI to listen for events.
+//The program is also created in a new thread and not in the DataRetrieval thread so as to keep the GUI and the
+//task logic as separate as possible.
+public class FinchLiveData {
     private static SimpleBooleanProperty collectLiveData;
     private static int updateSpeed;
-
     private static SimpleStringProperty timeElapsed;
     private static SimpleObjectProperty<FinchState> currentState;
     private static SimpleObjectProperty<RawAndPecentage> currLeftVelStats;
@@ -20,6 +22,9 @@ public abstract class FinchLiveData { //TODO decide if we can simplify this file
     private static SimpleObjectProperty<RawAndPecentage> currLeftLightStats;
     private static SimpleObjectProperty<RawAndPecentage> currRightLightStats;
     private static LightInterfaceThread searchForLightThread;
+
+    //private constructor as we do not want this class to be instantiated.
+    private FinchLiveData() {}
 
     public static void startProgram(int speed) {
         updateSpeed = speed;
@@ -30,13 +35,8 @@ public abstract class FinchLiveData { //TODO decide if we can simplify this file
     }
 
     private static void startDataRetrievalInNewThread() {
-        //made in a new thread so we keep program and UI as separate as possible. Don't want to rigidly build the program for this UI
-        //when things can change in the future.
-        //UI needs it's own thread. Program needs own thread. Data retrieval to bridge between the 2.
-
-        //NOTE: DataRetrievalThread is highly coupled to this file
-        DataRetrievalThread t = new DataRetrievalThread();
-        t.start();
+        DataRetrievalThread drt = new DataRetrievalThread();
+        drt.start();
     }
 
     private static void startProgramInNewThread() {
@@ -55,7 +55,9 @@ public abstract class FinchLiveData { //TODO decide if we can simplify this file
     }
     
     public static void stopProgram() {
-        collectLiveData.set(false);
+        if (collectLiveData != null) {
+            collectLiveData.set(false);
+        }
         if (searchForLightThread != null) {
             searchForLightThread.stopProgram();
         }

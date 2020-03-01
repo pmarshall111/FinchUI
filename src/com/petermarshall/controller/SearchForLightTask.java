@@ -6,77 +6,49 @@ import com.petermarshall.view.ViewManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
-import javafx.scene.shape.Circle;
 
+//The controller for view/searchForLightTask.fxml
 public class SearchForLightTask {
-
     @FXML
     private Button stopBtn;
-
     @FXML
     private Button startBtn;
-
     @FXML
     private CheckBox showTelemetry;
-
     @FXML
     private Label timeElapsed;
-
     @FXML
     private Label leftLight;
-
     @FXML
     private ProgressBar leftLightBar;
-
     @FXML
     private Label rightLight;
-
     @FXML
     private ProgressBar rightLightBar;
-
     @FXML
     private Label leftWheel;
-
     @FXML
     private ProgressBar leftWheelBar;
-
     @FXML
     private Label rightWheel;
-
     @FXML
     private ProgressBar rightWheelBar;
-
     @FXML
     private ToggleButton rawSelected;
-
     @FXML
     private HBox waitingCircleBox;
-
     @FXML
     private HBox searchCircleBox;
-
     @FXML
     private HBox followCircleBox;
-
-
-
-
-    private final String CIRCLE_STYLE = "selectedCircleBox";
-    private final String LABEL_STYLE = "selectedLabel";
-    @FXML
-    private Circle waitingCircle;
-    @FXML
-    private Circle searchCircle;
-    @FXML
-    private Circle followCircle;
     @FXML
     private Label waitingLabel;
     @FXML
     private Label searchLabel;
     @FXML
     private Label followLabel;
-
-    private int NUM_DECIMAL_PLACES = 0;
+    private final String CIRCLE_STYLE = "selectedCircleBox";
+    private final String LABEL_STYLE = "selectedLabel";
 
     @FXML
     void goToMainMenu() {
@@ -84,13 +56,10 @@ public class SearchForLightTask {
         ViewManager.showMainMenu();
     }
 
-
-
     @FXML
     void startSearching() {
         stopBtn.setVisible(true);
         startBtn.setVisible(false);
-
         FinchLiveData.startProgram(100); //default val of 1s update time.
         bindData();
         setInitialVals();
@@ -104,8 +73,16 @@ public class SearchForLightTask {
     @FXML
     private void bindData() {
         timeElapsed.textProperty().bind(FinchLiveData.timeElapsedInNsProperty());
-        FinchLiveData.currentStateProperty().addListener((observable, oldValue, newValue) -> {
+        bindState();
+        bindLeftWheel();
+        bindLeftLight();
+        bindRightWheel();
+        bindRightLight();
+        bindProgramRunning();
+    }
 
+    private void bindState() {
+        FinchLiveData.currentStateProperty().addListener((observable, oldValue, newValue) -> {
             removeStateHighlightBox();
             switch (newValue){
                 case WAITING_TO_BE_LEVEL:
@@ -122,23 +99,33 @@ public class SearchForLightTask {
                     break;
             }
         });
+    }
 
+    private void bindLeftWheel() {
         FinchLiveData.currLeftVelStatsProperty().addListener((observable, oldValue, newValue) -> {
             updateVals(leftWheel, leftWheelBar, newValue);
         });
+    }
 
+    private void bindLeftLight() {
         FinchLiveData.currLeftLightStatsProperty().addListener((observable, oldValue, newValue) -> {
             updateVals(leftLight, leftLightBar, newValue);
         });
+    }
 
+    private void bindRightWheel() {
         FinchLiveData.currRightVelStatsProperty().addListener((observable, oldValue, newValue) -> {
             updateVals(rightWheel, rightWheelBar, newValue);
         });
+    }
 
+    private void bindRightLight() {
         FinchLiveData.currRightLightStatsProperty().addListener((observable, oldValue, newValue) -> {
             updateVals(rightLight, rightLightBar, newValue);
         });
+    }
 
+    private void bindProgramRunning() {
         FinchLiveData.collectLiveDataProperty().addListener((observable, oldValue, programRunning) -> {
             System.out.println("Program running: " + programRunning);
             if (!programRunning) {
@@ -173,8 +160,7 @@ public class SearchForLightTask {
                 FinchLiveData.stopProgram();
             }
         } catch (NullPointerException e) {
-            //do nothing. means we haven't tried to start the program yet so FinchLiveData has not yet been initialised
-//            System.out.println("Gone back to main menu from Search For Light before starting program.");
+            //do nothing. means the program has not yet been started and FinchLiveData has not been initialised
         }
     }
 
@@ -182,7 +168,6 @@ public class SearchForLightTask {
         startBtn.setVisible(true);
         stopBtn.setVisible(false);
         resetLiveData();
-
         if (showTelemetry.isSelected()) {
             ViewManager.showFinalTelemetry();
         }
@@ -195,7 +180,6 @@ public class SearchForLightTask {
 
     private void setValsToDefault() {
         unbindData();
-
         timeElapsed.setText("0m 0s");
         leftLight.setText("-1");
         rightLight.setText("-1");
