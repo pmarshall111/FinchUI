@@ -38,16 +38,7 @@ public class ViewManager {
     private void showMainMenuInstance() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-            //Different options for setting scene so that if the user changes the window dimensions, this is maintained
-            //after a page change.
-            if (mainStage.getScene() == null) {
-                mainStage.setScene(new Scene(root, newWindowWidth, newWindowHeight));
-            } else {
-                double nWidth = Math.max(newWindowWidth, mainStage.getScene().getWidth());
-                double nHeight = Math.max(newWindowHeight, mainStage.getScene().getHeight());
-                mainStage.setScene(new Scene(root, nWidth, nHeight));
-            }
-            mainStage.show();
+            showWindowMaintainSize(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -60,10 +51,7 @@ public class ViewManager {
     private void showSearchForLightInstance() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("searchForLightTask.fxml"));
-            double nWidth = Math.max(newWindowWidth, mainStage.getScene().getWidth());
-            double nHeight = Math.max(newWindowHeight, mainStage.getScene().getHeight());
-            mainStage.setScene(new Scene(root, nWidth, nHeight));
-            mainStage.show();
+            showWindowMaintainSize(root);
             mainStage.setOnCloseRequest(event -> FinchLiveData.stopProgram());
         } catch (IOException e) {
             e.printStackTrace();
@@ -95,6 +83,19 @@ public class ViewManager {
 
     public static void closeSearchPopup(int _id) {
         popupSearchStages.get(_id-1).close();
+    }
+
+    private void showWindowMaintainSize(Parent root) {
+        //2 options for setting scene so that if the user changes the window dimensions, this is maintained
+        //after a page change.
+        if (mainStage.getScene() == null) {
+            mainStage.setScene(new Scene(root, newWindowWidth, newWindowHeight));
+        } else {
+            double nWidth = Math.max(newWindowWidth, mainStage.getScene().getWidth());
+            double nHeight = Math.max(newWindowHeight, mainStage.getScene().getHeight());
+            mainStage.setScene(new Scene(root, nWidth, nHeight));
+        }
+        mainStage.show();
     }
 
 

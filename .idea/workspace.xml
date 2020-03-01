@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Finch UI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Finch UI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finch.log" beforeDir="false" afterPath="$PROJECT_DIR$/finch.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finch.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/Launcher.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/Controller.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/FinalTelemetry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finch UI/com/petermarshall/controller/FinalTelemetry.class" afterDir="false" />
@@ -369,7 +369,7 @@
       <workItem from="1580903950109" duration="7332000" />
       <workItem from="1580927751535" duration="14000" />
       <workItem from="1580985523552" duration="15282000" />
-      <workItem from="1582965530156" duration="29433000" />
+      <workItem from="1582965530156" duration="29673000" />
     </task>
     <servers />
   </component>
