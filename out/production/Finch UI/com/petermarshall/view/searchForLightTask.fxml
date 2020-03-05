@@ -3,14 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.*?>
 <?import java.net.*?>
-<?import javafx.scene.shape.Rectangle?>
 <ScrollPane xmlns="http://javafx.com/javafx/8.0.172-ea"
             xmlns:fx="http://javafx.com/fxml" fx:controller="com.petermarshall.controller.SearchForLightTask" fitToWidth="true">
     <content>
         <GridPane alignment="center">
-        <StackPane prefHeight="700.0" prefWidth="780.0">
+            <StackPane prefHeight="700.0" prefWidth="780.0">
             <VBox>
                 <HBox alignment="CENTER" styleClass="titleContent">
                     <Label styleClass="bigTitle" text="Task: "/>

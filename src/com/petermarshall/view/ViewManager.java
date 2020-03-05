@@ -1,6 +1,5 @@
 package com.petermarshall.view;
 
-import com.petermarshall.controller.SearchForLightTask;
 import com.petermarshall.model.FinchLiveData;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

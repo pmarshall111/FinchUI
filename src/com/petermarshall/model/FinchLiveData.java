@@ -1,6 +1,6 @@
 package com.petermarshall.model;
 
-import com.petermarshall.*;
+import com.petermarshall.Launcher;
 import com.petermarshall.main.FinchState;
 import com.petermarshall.main.LightInterfaceThread;
 import com.petermarshall.main.RawAndPecentage;
